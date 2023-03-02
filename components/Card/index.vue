@@ -1,34 +1,10 @@
 <script lang="ts" setup>
-const props = defineProps({
-  profileBannerUrl: {
-    type: String,
-    default: '',
-  },
-  profileImageUrlHttps: {
-    type: String,
-    default: '',
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-  screenName: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    default: '',
-  },
-  webSiteUrl: {
-    type: String,
-    default: '',
-  },
-  instaId: {
-    type: String,
-    default: '',
-  },
-})
+import { User } from '~/entities/User'
+
+type Props = {
+  user: User
+}
+defineProps<Props>()
 
 const f = {
   getBannerImgPath(screenName: string) {
@@ -36,6 +12,10 @@ const f = {
   },
   getProfileImgPath(screenName: string) {
     return 'assets/users/images/' + screenName + '_profile.jpg'
+  },
+  autoLink(text?: string) {
+    if (!text) return ''
+    return text.replace(/(https?:\/\/[^\s]*)/g, "<a href='$1'>$1</a>")
   },
 }
 </script>
@@ -47,33 +27,33 @@ const f = {
     <div>
       <img
         class="w-full rounded-t-md h-32"
-        :src="f.getBannerImgPath(screenName)"
-        :alt="name"
+        :src="f.getBannerImgPath(user.screenName)"
+        :alt="user.name"
       />
       <div class="m-2">
         <CardAvatar
           class="h-0 -top-8 relative"
-          :src="f.getProfileImgPath(screenName)"
-          :alt="name"
+          :src="f.getProfileImgPath(user.screenName)"
+          :alt="user.name"
         />
         <div class="mt-4">
-          <p class="text-xl font-bold">{{ name }}</p>
-          <p class="text-sm">{{ description }}</p>
+          <p class="text-xl font-bold">{{ user.name }}</p>
+          <p class="text-sm" v-html="f.autoLink(user.description)"></p>
         </div>
       </div>
     </div>
     <div>
       <div class="flex justify-end mt-2">
-        <div v-show="webSiteUrl" class="w-1/3 p-2">
-          <LinkButton :href="webSiteUrl"> Web </LinkButton>
+        <div v-if="user.url" class="w-1/3 p-2">
+          <LinkButton :href="user.url"> Web </LinkButton>
         </div>
         <div class="w-1/3 p-2">
-          <LinkButton :href="`https://twitter.com/${screenName}`">
+          <LinkButton :href="`https://twitter.com/${user.screenName}`">
             Twitter
           </LinkButton>
         </div>
-        <div v-show="instaId" class="w-1/3 p-2">
-          <LinkButton :href="`https://www.instagram.com/${screenName}`">
+        <div v-if="user.instaId" class="w-1/3 p-2">
+          <LinkButton :href="`https://www.instagram.com/${user.screenName}`">
             Instagram</LinkButton
           >
         </div>

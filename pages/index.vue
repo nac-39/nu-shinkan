@@ -2,16 +2,14 @@
   <PageWrapper class="flex-1 flex">
     <PageBody class="flex-1 flex">
       <PageSection class="flex flex-wrap justify-center">
-        <Card
-          v-for="user in users"
-          :key="user.screenName"
-          class="m-2"
-          :name="user.name"
-          :screen-name="user.screenName"
-          :description="user.description"
-          :profile-image-url-https="user.profileImageUrlHttps"
-          :web-site-url="user.url"
-        />
+        <ClientOnly>
+          <Card
+            v-for="user in shuffleArray(users)"
+            :key="user.screenName"
+            class="m-2"
+            :user="user"
+          />
+        </ClientOnly>
       </PageSection>
     </PageBody>
   </PageWrapper>
@@ -19,16 +17,8 @@
 
 <script lang="ts" setup>
 import UserData from '@/public/users.json'
+import { User } from 'entities/User'
 
-// composable
-type User = {
-  name: string
-  description: string
-  profileBannerUrl: string
-  profileImageUrlHttps: string
-  screenName: string
-  url: string
-}
 const { t } = useLang()
 
 // meta
@@ -47,9 +37,6 @@ const shuffleArray = (array: Array<User>) => {
   return dst
 }
 
-const users = computed<User[]>(() => {
-  return shuffleArray(UserData as User[])
-})
+// const users = computed(() => shuffleArray(UserData as User[]))
+const users = UserData as User[]
 </script>
-
-<style lang="scss"></style>
