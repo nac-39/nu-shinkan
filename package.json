@@ -65,7 +65,7 @@
   },
   "lint-staged": {
     "**/*.{js,ts,vue,html}": [
-      "pnpm lintfix"
+      "yarn lintfix"
     ]
   }
 }
