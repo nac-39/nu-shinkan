@@ -1,13 +1,5 @@
 [
     {
-        "name": "Tatsu@名大情報局編集長",
-        "description": "名大生が1,250人フォローするメディア『名大情報局』編集長／名古屋大学卒／編集長をしつつ、Webマーケ企業で働いています／学生の生活を豊かにするためと、名古屋エリアに向けた企業の採用・PRをサポートするために発信しています／メディアで収集した名大生のリアルデータをいち早くお届け／問い合わせや相談はお気軽にDMまで",
-        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1623190630150340611/1675932800",
-        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1623244106498715648/86UmTgI6_normal.jpg",
-        "screenName": "nagoya_media",
-        "url": "https://t.co/qdO5HkHVBp"
-    },
-    {
         "name": "名大プレゼミ・サークル合同新歓2023",
         "description": "名古屋大学の自主ゼミ系サークル合同新歓アカウントです！プレゼンや自主ゼミで「好き」を語ってみませんか？ゼロイチゼミ(@nu_zero_one)／学術サーバー(@Gaku_NU)／LAP!(@lap_nagoya)／名古屋大学ESS(@nu_ess)",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1621484137780744193/1676363911",
@@ -120,6 +112,14 @@
         "url": null
     },
     {
+        "name": "名古屋大学 競技プログラミングサークル NUCODER",
+        "description": "名古屋大学の学生による競技プログラミングサークル(非公認)/\n競プロに取り組む名大生の交流の場/\n\n活動内容\n・コンテスト参加 \n・バーチャルコンテスト開催 など。\n\nDiscord→https://t.co/UCyWPW7KZP",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1494526943290482693/1649165021",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1494544729417334787/YxwQtLtv_normal.jpg",
+        "screenName": "NUCODER3",
+        "url": null
+    },
+    {
         "name": "名古屋大学男子バレー部新歓アカウント2023",
         "description": "【2023新歓】名古屋大学男子バレーボール部です！ 新歓情報を発信していきます🌸 選手、マネージャー、アナリスト募集中です！DMもお待ちしてます！本アカウント@NagoyaVC 新歓インスタグラムhttps://t.co/7uhY64i7it",
         "profileBannerUrl": null,
@@ -144,11 +144,275 @@
         "url": null
     },
     {
+        "name": "マシタ　リュウスケ",
+        "description": "千種⚾️(愛知)→名大 化学生命工学科 新3年 アメフト🏈#90/駿台名駅SA",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1389386907864297472/1676471085",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1625863334292750336/T2R_qBFo_normal.jpg",
+        "screenName": "mashita1004",
+        "url": "https://t.co/pbSR8uKky3"
+    },
+    {
+        "name": "3/12旗揚げ公演✨民舞・太鼓サークル 鼓舞",
+        "description": "日本各地に伝わる踊り・和太鼓を練習し、披露しているサークルです！普段はみんなで演目の練習をしながら、時期によって夏祭りやスノボなどのイベントも！ご連絡はDMまで。 名古屋大学文化サークル連盟所属 https://t.co/0EPJcc5DD4  2022年度の新歓は締め切りました！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1374934589844545538/1647422439",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1504031826280849410/Z4jgjU35_normal.jpg",
+        "screenName": "taiKO_minBU",
+        "url": "https://t.co/0xudSZEdu9"
+    },
+    {
+        "name": "名大ラグビー部新歓アカウント",
+        "description": "名大ラグビー部の新歓アカウントです🏉選手•スタッフ大募集中🌸初心者も経験者も大歓迎😳DMいつでも待ってます✉️ #春から名大 #春から名大生 #名大ラグビー部 質問箱→https://t.co/5DbnC6fEgo 名古屋大学ラグビー部公式Twitter→@nurfc_",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1351549156972630016/1673765127",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1614514031481753600/deAYwU_9_normal.jpg",
+        "screenName": "nurfc2023",
+        "url": "https://t.co/1oCKbPbhoo"
+    },
+    {
+        "name": "名大男子ラクロス部LIZARDS【新歓】",
+        "description": "名古屋大学男子ラクロス部LIZARDS(@NUL_Lizards)の新歓アカウントです🥍🦎 大学生活に役立つ情報や、部活の魅力などを発信していきます✨✨ 私たちと一緒に「学生日本一」を目指しませんか？",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1350266082972483586/1675815754",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1350267928642428930/it1MERAb_normal.jpg",
+        "screenName": "nul_shinkan",
+        "url": "https://t.co/ynaZ44o2Vt"
+    },
+    {
+        "name": "名古屋大学読書サークル",
+        "description": "毎月第1日曜日にオンライン読書会、毎週金曜日に対面読書会を開催中！大学を問わず、随時部員募集中です！ #読書サークル #春から名大 読書メーター（https://t.co/DTx1si9hL9） Instagram(https://t.co/6eFNA6ibDC)",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1246436986530852864/1586495799",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1492191699715903494/QJjga8Jc_normal.jpg",
+        "screenName": "meidaidokusyo",
+        "url": "https://t.co/sQ5eov94mB"
+    },
+    {
+        "name": "学生ボランティアサークルおでん",
+        "description": "私たちは土曜日に障害児•者の方たちと電車に乗ってお出かけしたり、おやつを作ったり、 楽しく身体を動かしたりしています。また、キャンプやクリスマス会等も行っています。障害児•者と向き合ったり、 大学生同士で企画を準備していく中で、たくさんの人と関わり、他の人の考えを受け入れながら、みんなで1つの行事をつくりあげています！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1245109532126113792/1649679039",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1568756335722008577/O4MWL43f_normal.jpg",
+        "screenName": "oden_circle",
+        "url": "https://t.co/auh99TmCG8"
+    },
+    {
+        "name": "名古屋大学教育サークルすとーりーうぃず",
+        "description": "高校生の進路相談にのる授業をしているサークルです🔥 名大生を中心に活動しています😊 教育関係に興味ある方はぜひ！＃名大 ＃教育 ＃キャリア ＃春から名大",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1241622332398960640/1584861211",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1241622765083361281/DjgOEP0d_normal.jpg",
+        "screenName": "storywith_",
+        "url": "https://t.co/BnL9cZ1NXI"
+    },
+    {
+        "name": "名大気象サークル　フロンティア",
+        "description": "名古屋大学を中心に活動している気象サークル フロンティアのTwitterです！気象予報士2名在籍。気象に関連した活動を実施しています。 興味のある方は、DMかnumetss@gmail.comまでメールをお送りください。 ※会員の募集は、名古屋大学及び近隣大学の学生に限らせていただいております。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1236443962031738880/1583626917",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1332634250529570817/w0UvYdbh_normal.jpg",
+        "screenName": "NU_metss",
+        "url": "https://t.co/14F2iZVN1c"
+    },
+    {
+        "name": "名古屋大学競技ダンス部2023新歓",
+        "description": "名大競技ダンス部@meidaibuken の新歓アカウントです💃水曜17時~第5体育館、土曜14時~第2体育館で活動中！新入部員募集中なので気になったらどなたでも気軽にDMください！⬇️下記リンクもチェックお願いします！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1236154463968100352/1675184563",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1620455129542696961/BjRVe-8f_normal.jpg",
+        "screenName": "meidaibuken2023",
+        "url": "https://t.co/lXbTkqWzA1"
+    },
+    {
+        "name": "名大アプリ開発サークル jack @ 新入生募集2023",
+        "description": "初心者大歓迎🔰 | 作りたいものを作る | 優しい先輩がアドバイスをくれる | 名古屋大学を中心とした、アプリ開発サークル jackの新入生募集アカウント | 本家→ @jackapp_tmy | 少しでも興味を持った方はこちらから↓ #名大 #プログラミング #春から名大",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1232882172970713088/1584016143",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1232883202328367104/_oxTh5rg_normal.jpg",
+        "screenName": "jack20200001101",
+        "url": "https://t.co/nUcJHOCLX4"
+    },
+    {
+        "name": "名古屋大学防災サークル　轍",
+        "description": "2019年2月に結成した名古屋大学の学生団体です。｢明るく楽しく前向きに｣をモットーに活動しています！質問箱▷▶︎ https://t.co/WKvTd1eyyk ご連絡は気軽にDMへどうぞ！ #防災 #減災",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1127034633978204161/1593049905",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1275971460318654464/YTAs0cx1_normal.jpg",
+        "screenName": "NU_Wadachi2019",
+        "url": "https://t.co/PwmPRZ3uxF"
+    },
+    {
+        "name": "名大e-Sportsサークル「ディスボード」",
+        "description": "2018年4/23～。名古屋大学中心の学生e-Sportsサークル 他大学生も歓迎！1/16 現在メンバー116名。部室PC5台完備。様々なイベント企画運営しています。LoL/シャドバ/APEX/VALORANT/スマブラ/ぷよテト/第五人格。興味がある方はリプorDMで！体験入部希望は下のリンクから！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1006318549416185856/1573454016",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1193778844567666688/R1P8RPqN_normal.jpg",
+        "screenName": "NUdisboard",
+        "url": "https://t.co/H7XApjC9aY"
+    },
+    {
+        "name": "名大アメフト部GRAMPUS 新歓2023🏈",
+        "description": "名大アメフト部GRAMPUSの新歓用アカウントです🏈 GRAMPUSの新歓は【名大最大】なんと、毎年1500人以上参加してます！これはなんと名大新入生の2人に1人！！新歓連絡を見逃すな！新歓イベントの参加連絡等はDMから受け付けています📩",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/974939444720451585/1676293505",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1625118817742618626/S4nrKrQ0_normal.jpg",
+        "screenName": "nu_grashin2023",
+        "url": "https://t.co/FGqf88bHnI"
+    },
+    {
+        "name": "Runtastic@名古屋ランニングサークル",
+        "description": "毎週水金18:10〜名古屋大学を中心にインカレで活動しているランニングサークルです🏃‍♂️🏃‍♀️毎週水金にサークル体験やってます😆走ることが好きな人なら誰でも大歓迎です🐾☺️興味のある方はDMへご連絡下さい！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/960936431492284417/1655544862",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/962623119411200001/4KP2kUah_normal.jpg",
+        "screenName": "_Runtastic",
+        "url": "https://t.co/Y3pglwpcNy"
+    },
+    {
+        "name": "NUFolders 名大折紙サークル",
+        "description": "名古屋大学折り紙サークルNU Folders(にゅーふぉるだーず)です！ 学年学部・大学を問わずメンバーを募集しています。見学希望の方はDMにてご連絡ください。 代表:@tommy03ori",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/849099547280322561/1617360050",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1377933859904389122/HnY5r9GT_normal.jpg",
+        "screenName": "meidai_origami",
+        "url": "https://t.co/7Pr1pSEUpQ"
+    },
+    {
+        "name": "山田フルスロットル(名大バドミントンサークル)",
+        "description": "名古屋大学生のみによるバドミントンサークルの山田フルスロットルです。 #春から名大 #名大 #バドミントン",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/843805664338092034/1652538078",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/843807610369269760/22Ys9-xP_normal.jpg",
+        "screenName": "YFTbadminton",
+        "url": "https://t.co/oFDUjT6VVp"
+    },
+    {
+        "name": "名大シャボン玉サークル・ゆどうふ",
+        "description": "名古屋大学でふわっとシャボン玉を飛ばしてるサークルです。液の配合や道具から自分たちで作っています！興味のある方はDMでご連絡下さい😊 \n#春から名大\nhttps://t.co/Vd81rQEyw2",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/802883596734242817/1566060289",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1114888900143484928/LLcYvpQJ_normal.jpg",
+        "screenName": "nu_syabondama",
+        "url": "https://t.co/SImLMtA08J"
+    },
+    {
+        "name": "名古屋大学農業サークル F&M",
+        "description": "名古屋大学の農業系サークル。生産現場や市場に直接足を運び、お手伝いをしながら、生産者のお話を聞き、それを周囲に伝え広める媒体として主に活動しています。様々なイベントも随時開催しますので、少しでも興味のある方はご連絡ください！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/735394577943666688/1464179863",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/735449772413198336/wLd8tzg9_normal.jpg",
+        "screenName": "nagoya_fm1",
+        "url": "https://t.co/xELTNQOAlz"
+    },
+    {
+        "name": "名大ポーカーサークルNUts",
+        "description": "2016/5/21設立 世界で人気のポーカー、テキサスホールデム&オマハ&etcを一緒に遊びましょう！体験したい方はDMください!活動日は月曜と金曜です!名大とついてますがインカレです！※賭博は禁止してます ※DMの対応がない場合は@Lemonade_A6s までご連絡ください。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/733832675241263104/1486661706",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/877128799296471040/PQLi5PkW_normal.jpg",
+        "screenName": "NU_poker",
+        "url": null
+    },
+    {
         "name": "名古屋大学フィギュアスケート部",
         "description": "みんな仲良しでとっても楽しい部活です😊大学からスケートを始めた部員がほとんどです！初心者・経験者、男女問わず部員を大募集中⛸フィギュア部に入って最高の四年間を氷上で過ごしましょう！！ インスタもフォローお願いします♡",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/709235869111025665/1618375633",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/717297037897674752/dJQt3tl7_normal.jpg",
         "screenName": "nagoya_univ_fsc",
         "url": "https://t.co/SsHfR1FCF1"
+    },
+    {
+        "name": "名大セクマイサークル『雨玉』",
+        "description": "名古屋大学非公式セクマイサークル「雨上がりのしゃぼん玉」通称「雨玉」です！ 当事者・理解者が雑談を通じてゆるく繋がるサークルです。LGBTQ+ group 会により、学生のみ(所属は問わない)と誰でも可があります 質問・参加希望など、お気軽にご連絡ください→nagoya.u.lgbt@gmail.com",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/3307583016/1438866776",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/653763749669539840/roUHeTYq_normal.jpg",
+        "screenName": "nu_lgbt",
+        "url": "https://t.co/znMth45Af1"
+    },
+    {
+        "name": "名古屋大学宇宙開発チームNAFT",
+        "description": "学生の力で宇宙を目指す、名古屋大学の公認サークルです。 「宇宙を身近に」をモットーに活動しています。 \n公式マスコット(@rocketry_NAFT)\n質問箱はこちら↳https://t.co/555QswEUZP\n来たれ、宇宙好き。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/3049043551/1488743277",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/571574246036369408/zczUnXvl_normal.jpeg",
+        "screenName": "naft_linkspace",
+        "url": "https://t.co/UhveqQRp9a"
+    },
+    {
+        "name": "名古屋大学チェスサークル",
+        "description": "We are Nagoya University Chess Circle(NUCC). Current schedule:Every Mon, Thu. 18:30~ at 第1文化サークル棟2階1文-10 代表者: シュネー(@Kira_Freischutz)　夏季休業期間中はあまり活動できていない模様。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2427039222/1400913622",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/452027173650452480/2_o4DpWE_normal.jpeg",
+        "screenName": "NUChessCircle",
+        "url": null
+    },
+    {
+        "name": "TRUST公式",
+        "description": "TRUST（トラスト）です 名大、南山、中京、椙山、金城などの大学生で構成されてるバドミントンのインカレサークルです🏸経験者、未経験者、関係なく活動しています！主にInstagramで告知しいてるので、下のURLからご覧ください🙌",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2219988865/1677674191",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1630911167525969921/bNnES53G_normal.jpg",
+        "screenName": "TRUSTbad",
+        "url": "https://t.co/86ogf3FYdZ"
+    },
+    {
+        "name": "名大テニスサークルJOY",
+        "description": "名大を中心としたインカレテニスサークルです!!名工、南山、中京、名城、愛大、金城などの学生も所属しています！練習に参加したい方や質問がある方はDMへ◎新入生大歓迎です^_^｜✿インスタ→https://t.co/iCi0iSGex6",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2159232553/1639361210",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1614251532383563780/34dKzyt__normal.jpg",
+        "screenName": "meidaijoy",
+        "url": "https://t.co/qBkhOyBtJ5"
+    },
+    {
+        "name": "名古屋大学 バスケサークル R.P.C.",
+        "description": "バスケットボールサークルRPCです🏀名大を中心に名城,椙山,名市,名女,外大などいろいろな大学から集まって週2,3回の練習や他のサークルとの試合,BBQや合宿等のイベントも行います😆✨男女問わずプレーヤー大募集です！！！気軽にご連絡ください💗",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1850896290/1395727901",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/378800000437859937/1aaf9896ddda45445505f70de8ab1d55_normal.jpeg",
+        "screenName": "RPC_basketball",
+        "url": "https://t.co/uMrP0feGrG"
+    },
+    {
+        "name": "名古屋大学　ねこサークル　なごねこ",
+        "description": "名古屋大学 ねこサークル 「なごねこ」の公式アカウントです。餌やり体験は平日の13時〜,18時〜行っています。 基本的に連絡は下記メールアドレスへお願いします。 活動参加希望の方は公式ライン(固定ツイート参照)へ。meidaineko@yahoo.co.jp 興味を持った方はHPもご覧下さい",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/595626555/1476070797",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/3219210787/2ace8275993b487333095b43fefdc799_normal.png",
+        "screenName": "meidaineko",
+        "url": "https://t.co/cQd64rKuv7"
+    },
+    {
+        "name": "名古屋大学航空部@七大戦",
+        "description": "名大航空部のアカウントです。大会や合宿の様子から、部員の隠れた秘密まで不定期につぶやきます。 2023新歓アカウント🌸→@nuac_2023",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/480121085/1666450375",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1796080567/discus_normal.jpg",
+        "screenName": "nagoya_uac",
+        "url": "https://t.co/kyhaaGuaMv"
+    },
+    {
+        "name": "名古屋大学馬術部",
+        "description": "名古屋大学馬術部です。馬術部の日常や試合速報、新歓情報などをつぶやきます。新入部員大募集中！！！ モルモットもいます！公式LINE→ https://t.co/eags1exZFC     ご連絡等あればDMまたはメール（nagoya_u_bajutsu@yahoo.co.jp）まで！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/285125672/1458371523",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/880692619717881861/JIjZaFTa_normal.jpg",
+        "screenName": "nagoya_u_uma",
+        "url": null
+    },
+    {
+        "name": "名古屋大学 環境サークルSOE",
+        "description": "(公認)【🍃名大環境サークルSong of Earth】《令和元年度名大総長顕彰受賞》 名古屋大学を中心に環境に関する活動をゆるっと楽しく行っています！いつでも参加可能。気軽にDMください！名古屋大学下宿用品リユース市（HP https://t.co/YlT0MyUlbF)　の情報もこちらで配信します。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/203898509/1500541318",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1146665953/___normal.png",
+        "screenName": "reuse_market",
+        "url": "https://t.co/Wx4xSE9mVW"
+    },
+    {
+        "name": "アイセック名古屋大学委員会",
+        "description": "アイセックは、世界100以上の国と地域の支部と約30,000人の学生による非営利組織です🌎\n国際交流機会を通じて、平和で人々の可能性が最大限発揮された社会の実現を目指しています。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/137014937/1645263910",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1494971410904907781/htnLPNWe_normal.jpg",
+        "screenName": "AIESEC_JP_NA",
+        "url": null
+    },
+    {
+        "name": "名大フォーク",
+        "description": "名古屋大学フォークソング同好会は、文サ連に所属するバンドサークルです。初心者から経験者まで様々な音楽を楽しめます。毎週木曜日18:00、学生会館にて例会を行なっています。どうぞ気軽にお越しください！",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/121907270/1487230575",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/531437984558501888/ZHt82Mg-_normal.png",
+        "screenName": "meidai_folksong",
+        "url": "https://t.co/aeBP3dWWuo"
+    },
+    {
+        "name": "フリーペーパー『粋』@1/9 新刊発行!!",
+        "description": "【2022.1.9 Vol.76 RELEASED!!】 \n名大・南山大の学生でフリーペーパーを制作している学生団体『粋』の公式アカウントです。\nLINE→ https://t.co/Z0bGefIY6N \nInstagram→https://t.co/4BDjPv7BTL",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/117431357/1673328798",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/739467081788227584/V3_WDxfV_normal.jpg",
+        "screenName": "ikikikiki",
+        "url": "https://t.co/Mix62LAp8w"
+    },
+    {
+        "name": "名古屋大学 FormulaTeamFEM",
+        "description": "Nagoya University Formula Student Team🇯🇵\nWorld Ranking 2nd🥈 | 1x Japanese'🏆| 4x EV'🏆\n\nTarget：【EV初⚡️】日本大会総合優勝🔥\nHP：https://t.co/Lurd1SlB4S\n\n#名古屋大学\n#春から名大\n＃学生フォーミュラ",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/117035669/1571283079",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1184673210953949185/Ee9kxArV_normal.jpg",
+        "screenName": "FormulaTeamFEM",
+        "url": "https://t.co/N2dgIkrH8m"
     }
 ]
