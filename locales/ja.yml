@@ -7,6 +7,10 @@ components:
 pages:
   '404':
     title: ページが見つかりません
+  about:
+    nav: このサイトについて
+    title: このサイトについて
+    description: 説明
   index:
     title: nuxt 3[]素晴らしい[]スターター
   blank:

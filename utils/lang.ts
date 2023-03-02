@@ -9,30 +9,10 @@ export interface ILocales {
 }
 
 export const availableLocales: ILocales = {
-  en: {
-    name: 'English',
-    iso: 'en',
-    flag: '🇺🇸',
-  },
-  id: {
-    name: 'Bahasa',
-    iso: 'id',
-    flag: '🇮🇩',
-  },
   ja: {
     name: '日本語',
     iso: 'ja',
     flag: '🇯🇵',
-  },
-  ko: {
-    name: '한국어',
-    iso: 'ko',
-    flag: '🇰🇷',
-  },
-  zh: {
-    name: '简体中文',
-    iso: 'zh',
-    flag: '🇨🇳',
   },
 }
 
