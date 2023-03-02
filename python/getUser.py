@@ -11,7 +11,8 @@ dotenv.load_dotenv()
 
 token = os.getenv('TWITTER_BEARER_TOKEN')
 list_id = os.getenv('LIST_ID')
-img_path = "../assets/users"
+img_path = "../public/assets/users/images/"
+json_path = "../public/"
 
 
 def get_club_users(token, cursor="", users=[]):
@@ -20,8 +21,8 @@ def get_club_users(token, cursor="", users=[]):
                        )
     res.raise_for_status()
     res = res.json()
+    users += res["users"]
     if res["next_cursor_str"] != "0":
-        users += res["users"]
         time.sleep(0.1)
         get_club_users(token, res["next_cursor_str"], users)
     return users
@@ -39,13 +40,13 @@ def format_user(user):
 
 
 def save_json(users):
-    with open('users.json', 'w') as f:
+    with open(json_path + 'users.json', 'w') as f:
         json.dump(users, f, indent=4, ensure_ascii=False)
 
 
 def save_img(url, name):
     res = requests.get(url)
-    with open(f'{img_path}/images/{name}.jpg', 'wb') as f:
+    with open(f'{img_path}/{name}.jpg', 'wb') as f:
         f.write(res.content)
 
 
@@ -97,7 +98,6 @@ if __name__ == '__main__':
         except Exception as e:
             pprint(user)
             pprint(e)
-    print(users)
     save_json(convert_camel(user_json))
     pprint(f"saved users: {len(user_json)}")
     with ThreadPoolExecutor() as executor:
