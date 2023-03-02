@@ -19,6 +19,7 @@
 
 <script lang="ts" setup>
 import UserData from '@/public/users.json'
+
 // composable
 type User = {
   name: string
@@ -36,16 +37,14 @@ definePageMeta({
 })
 
 const shuffleArray = (array: Array<User>) => {
-  const cloneArray = [...array]
-
-  const result = cloneArray.reduce((_, cur, idx, __) => {
-    const rand = Math.floor(Math.random() * (idx + 1))
-    cloneArray[idx] = cloneArray[rand]
-    cloneArray[rand] = cur
-    return cloneArray
-  })
-
-  return result
+  const dst = array.slice()
+  let i = array.length
+  while (i > 0) {
+    i--
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[dst[i], dst[j]] = [dst[j], dst[i]]
+  }
+  return dst
 }
 
 const users = computed<User[]>(() => {

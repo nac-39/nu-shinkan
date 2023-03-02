@@ -30,12 +30,14 @@ const props = defineProps({
   },
 })
 
-const bannerSrc = computed(
-  () => 'assets/users/images/' + props.screenName + '_banner.jpg'
-)
-const profileSrc = computed(
-  () => 'assets/users/images/' + props.screenName + '_profile.jpg'
-)
+const f = {
+  getBannerImgPath(screenName: string) {
+    return 'assets/users/images/' + screenName + '_banner.jpg'
+  },
+  getProfileImgPath(screenName: string) {
+    return 'assets/users/images/' + screenName + '_profile.jpg'
+  },
+}
 </script>
 
 <template>
@@ -43,9 +45,17 @@ const profileSrc = computed(
     class="flex flex-col justify-between sm:w-80 w-full rounded-md dark:bg-gray-800 bg-white shadow-gray-300 divide-y divide-primary-300 dark:divide-dark-50"
   >
     <div>
-      <img class="w-full rounded-t-md h-32" :src="bannerSrc" :alt="name" />
+      <img
+        class="w-full rounded-t-md h-32"
+        :src="f.getBannerImgPath(screenName)"
+        :alt="name"
+      />
       <div class="m-2">
-        <CardAvatar class="h-0 -top-8 relative" :src="profileSrc" :alt="name" />
+        <CardAvatar
+          class="h-0 -top-8 relative"
+          :src="f.getProfileImgPath(screenName)"
+          :alt="name"
+        />
         <div class="mt-4">
           <p class="text-xl font-bold">{{ name }}</p>
           <p class="text-sm">{{ description }}</p>
