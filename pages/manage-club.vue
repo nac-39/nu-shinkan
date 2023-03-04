@@ -1,0 +1,15 @@
+<script setup lang="ts">
+// meta
+definePageMeta({
+  layout: 'page',
+  middleware: 'auth',
+})
+</script>
+
+<template>
+  <PageWrapper class="flex-1 flex">
+    <PageBody class="flex-1 flex">
+      <div>団体関係者用ページ</div>
+    </PageBody>
+  </PageWrapper>
+</template>

@@ -7,12 +7,6 @@ type Props = {
 defineProps<Props>()
 
 const f = {
-  getBannerImgPath(screenName: string) {
-    return 'assets/users/images/' + screenName + '_banner.jpg'
-  },
-  getProfileImgPath(screenName: string) {
-    return 'assets/users/images/' + screenName + '_profile.jpg'
-  },
   autoLink(text?: string) {
     if (!text) return ''
     return text.replace(/(https?:\/\/[^\s]*)/g, "<a href='$1'>$1</a>")
@@ -27,13 +21,13 @@ const f = {
     <div>
       <img
         class="w-full rounded-t-md h-32"
-        :src="f.getBannerImgPath(user.screenName)"
+        :src="user.profileBannerUrl"
         :alt="user.name"
       />
       <div class="m-2">
         <CardAvatar
           class="h-0 -top-8 relative"
-          :src="f.getProfileImgPath(user.screenName)"
+          :src="user.profileImageUrlHttps"
           :alt="user.name"
         />
         <div class="mt-4">
@@ -53,7 +47,7 @@ const f = {
           </LinkButton>
         </div>
         <div v-if="user.instaId" class="w-1/3 p-2">
-          <LinkButton :href="`https://www.instagram.com/${user.screenName}`">
+          <LinkButton :href="`https://www.instagram.com/${user.instaId}`">
             Instagram</LinkButton
           >
         </div>
