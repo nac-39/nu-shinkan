@@ -2,7 +2,6 @@
 // meta
 definePageMeta({
   layout: 'page',
-  middleware: 'auth',
 })
 </script>
 
@@ -10,6 +9,7 @@ definePageMeta({
   <PageWrapper class="flex-1 flex">
     <PageBody class="flex-1 flex">
       <div>団体関係者用ページ</div>
+      <div></div>
     </PageBody>
   </PageWrapper>
 </template>

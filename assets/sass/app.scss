@@ -5,13 +5,8 @@
 
 // a tag
 a {
-  color: theme('colors.slate.500');
   text-decoration: none;
   transition: color 0.2s ease-in-out;
-  &:hover {
-    color: theme('colors.slate.600');
-    text-decoration: underline;
-  }
 }
 // components
 ::-webkit-scrollbar {

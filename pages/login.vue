@@ -2,15 +2,9 @@
 // meta
 definePageMeta({
   layout: 'page',
-  middleware: 'auth',
 })
 
-const { signIn, signOut, token, checkAuthState, user } = useAuth()
-
-const onClickLogin = async () => {
-  await signIn()
-  console.log(token.value)
-}
+const { signIn } = useAuth()
 </script>
 
 <template>
@@ -18,10 +12,13 @@ const onClickLogin = async () => {
     <PageBody class="flex-1 flex">
       <div>
         <ClientOnly>
-          <Button @click="onClickLogin">Twitterでログイン</Button>
-          <div>token: {{ !!token }}</div>
-          <div>user: {{ user }}</div>
-          <Button @click="signOut">ログアウト</Button>
+          <div>団体関係者ログイン</div>
+          <div>
+            <p>
+              団体関係者はログインすると、イベントの作成ができるようになります！
+            </p>
+          </div>
+          <Button @click="signIn">Twitterでログイン</Button>
         </ClientOnly>
       </div>
     </PageBody>
