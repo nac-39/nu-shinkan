@@ -9,13 +9,13 @@ import { getAnalytics } from 'firebase/analytics'
 
 export default defineNuxtPlugin(() => {
   const firebaseConfig = {
-    apiKey: 'AIzaSyAPS_uv-SX6EJ6sxRGzAHXzI9PvKXqeDuk',
-    authDomain: 'nu-shinkan.firebaseapp.com',
-    projectId: 'nu-shinkan',
-    storageBucket: 'nu-shinkan.appspot.com',
-    messagingSenderId: '1094048142661',
-    appId: '1:1094048142661:web:edf5b73e0df2936e08da2c',
-    measurementId: 'G-XLT2GPGG4J',
+    apiKey: 'AIzaSyAoitYXZqjPCfYR727c5osOrxhBQ2CQlQI',
+    authDomain: 'nu-shinkan-92c7b.firebaseapp.com',
+    projectId: 'nu-shinkan-92c7b',
+    storageBucket: 'nu-shinkan-92c7b.appspot.com',
+    messagingSenderId: '955850920562',
+    appId: '1:955850920562:web:f12fc6863f2279545028eb',
+    measurementId: 'G-W1171W9FFT',
   }
 
   // Initialize Firebase
