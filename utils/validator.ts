@@ -2,7 +2,7 @@ type Target = Record<
   string,
   string | number | boolean | Date | Array<Target> | null
 >
-type Value = string | number | boolean | Date | Array<Target>
+type Value = string | number | boolean | Date | Array<Target> | null
 type Validators = Record<string, (arg: Value) => true | string>
 // 関数を返す関数
 // type Validator = (fieldName: string) => (value: Value) => true | string
