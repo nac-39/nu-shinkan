@@ -40,7 +40,9 @@ export const useAuth = () => {
       result != null
         ? await TwitterAuthProvider.credentialFromResult(result)
         : null
-    user.value = result ? result.user : undefined
+    if (!user.value) {
+      user.value = result ? result.user : undefined
+    }
   }
 
   const signOut = async () => {
