@@ -100,5 +100,3 @@ if __name__ == '__main__':
             pprint(e)
     save_json(convert_camel(user_json))
     pprint(f"saved users: {len(user_json)}")
-    with ThreadPoolExecutor() as executor:
-        feature = executor.submit(save_images, user_json)
