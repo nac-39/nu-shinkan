@@ -5,13 +5,12 @@ import {
   onAuthStateChanged,
   signInWithRedirect,
   getRedirectResult,
-  User,
+  User as FirebaseUser,
 } from 'firebase/auth'
-import { isReturnStatement } from 'typescript'
 
 export const useAuth = () => {
   const token = useState<string | undefined>('token', () => undefined)
-  const user = useState<User | undefined>('user', () => undefined)
+  const user = useState<FirebaseUser | undefined>('user', () => undefined)
   const error = useState<{ code: number; message: string } | undefined>(
     'error',
     () => undefined

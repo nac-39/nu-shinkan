@@ -53,6 +53,9 @@ const MyTheme = {
       '800': '#c7314f',
       '900': '#b81334',
     },
+    special: {
+      twitter: '#1DA1F2',
+    },
   },
 }
 

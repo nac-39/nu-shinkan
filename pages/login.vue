@@ -18,7 +18,9 @@ const { signIn } = useAuth()
               団体関係者はログインすると、イベントの作成ができるようになります！
             </p>
           </div>
-          <Button @click="signIn">Twitterでログイン</Button>
+          <Button class="bg-special-twitter" @click="signIn"
+            >Twitterでログイン</Button
+          >
         </ClientOnly>
       </div>
     </PageBody>

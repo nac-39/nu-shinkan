@@ -17,6 +17,22 @@ pages:
       logout: ログアウト
   manage-club:
     nav: 団体関係者
+  events:
+    edit:
+      title: イベント登録
+      event_name:
+        title: イベント名
+        placeholder: イベント名を入力
+      date:
+        title: 日付
+        start_date: 開始日時
+        end_date: 終了日時
+      place:
+        title: 場所
+        placeholder: 場所を入力
+      description:
+        title: 詳細
+        placeholder: 詳細を入力
 banners:
   welcome: こんにちは、%{app_name} へようこそ!
 others:
