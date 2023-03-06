@@ -12,11 +12,14 @@ const errorMsg = ref('')
 
 const inputValues = reactive<EventCreate>({
   name: '',
+  clubName: '',
+  clubImagePath: '',
   isAllDay: false,
   startDate: new Date(),
   endDate: new Date(),
   place: '',
   description: '',
+  webSiteUrl: '',
 })
 
 const db = useState<Firestore>('firebase.db')
@@ -29,12 +32,15 @@ const onSubmit = async () => {
   errorMsg.value = ''
   const user = fGetUser()
   if (!user) return
+  inputValues.clubName = user.displayName
+  inputValues.clubImagePath = user.photoURL
   if (inputValues.isAllDay) {
     inputValues.startDate = null
     inputValues.endDate = null
   }
   errorMsg.value = useValidate(inputValues, {
     name: validators.requiredForText(t('pages.events.edit.event_name.title')),
+    webSiteUrl: validators.isUrl('関連URL'),
     startDate: (startDate) => {
       if ((!startDate || !inputValues.endDate) && inputValues.isAllDay)
         return true
@@ -79,14 +85,14 @@ const onSubmit = async () => {
     </FormCheckBox>
     <div v-show="!inputValues.isAllDay" class="flex space-x-2">
       <div>
-        <p>開始日時</p>
+        <p>{{ t('pages.events.edit.date.start_date') }}</p>
         <VueDatePicker
           v-model="inputValues.startDate"
           :dark="theme == 'dark'"
         />
       </div>
       <div>
-        <p>終了日時</p>
+        <p>{{ t('pages.events.edit.date.end_date') }}</p>
         <VueDatePicker v-model="inputValues.endDate" :dark="theme == 'dark'" />
       </div>
     </div>
@@ -95,7 +101,10 @@ const onSubmit = async () => {
     <div class="font-bold text-lg">
       {{ t('pages.events.edit.place.title') }}
     </div>
-    <FormTextInput v-model="inputValues.place" />
+    <FormTextInput
+      v-model="inputValues.place"
+      :placeholder="t('pages.events.edit.place.placeholder')"
+    />
   </div>
   <div>
     <div class="font-bold text-lg">
@@ -104,6 +113,18 @@ const onSubmit = async () => {
     <FormTextArea
       v-model="inputValues.description"
       :placeholder="t('pages.events.edit.description.placeholder')"
+    />
+  </div>
+  <div>
+    <div class="font-bold text-lg">
+      {{ t('pages.events.edit.web_site_url.title') }}
+    </div>
+    <div>
+      {{ t('pages.events.edit.web_site_url.description') }}
+    </div>
+    <FormTextInput
+      v-model="inputValues.webSiteUrl"
+      :placeholder="t('pages.events.edit.web_site_url.placeholder')"
     />
   </div>
   <ErrorMessage :error-message="errorMsg" />

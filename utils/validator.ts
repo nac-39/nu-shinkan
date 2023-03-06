@@ -22,7 +22,7 @@ export const useValidate = (target: Target, validators: Validators) => {
 export const validators: Record<string, Function> = {
   requiredForText: (fieldName: string) => {
     return (value: string) => {
-      if (value) return true
+      if (value.trim().length) return true
       return fieldName + 'は必須項目です。'
     }
   },
@@ -38,4 +38,16 @@ export const validators: Record<string, Function> = {
       return true
     }
   },
+  isUrl: (fieldName: string) => {
+    return (value: string) => {
+      if (!value) return
+      return value.match(regexes.url)
+        ? true
+        : fieldName + 'はURLの形式で入力してください。'
+    }
+  },
+}
+
+export const regexes: Record<string, RegExp> = {
+  url: /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/,
 }

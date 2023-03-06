@@ -34,6 +34,10 @@ pages:
       description:
         title: 詳細
         placeholder: 詳細を入力
+      web_site_url:
+        title: 関連URL
+        description: 申し込みフォームのURL、詳細が見れるウェブサイトなどのリンク
+        placeholder: 関連URLを入力
       errors:
         start_date_must_be_before_end_date: 開始日が終了日より後になっています。
         input_start_day: 開始日時を入力してください。
