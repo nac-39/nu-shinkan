@@ -67,7 +67,12 @@ const { data: events } = await useFetch(async () => {
 </script>
 
 <template>
-  <div v-if="events" class="space-y-2 space-x-2 flex flex-wrap flex-col">
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+  <div v-if="events" class="flex flex-wrap">
+    <EventCard
+      v-for="event in events"
+      :key="event.id"
+      :event="event"
+      class="m-1 h-min"
+    />
   </div>
 </template>

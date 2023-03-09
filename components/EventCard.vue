@@ -90,12 +90,14 @@ const descriptionText = computed(() => {
         </p>
         <p
           v-if="event.webSiteUrl"
-          class="pt-1 text-sm inline-flex items-center space-x-1"
+          class="pt-1 text-sm inline-flex items-center space-x-1 w-full"
         >
           <IconPh:link-simple-light />
-          <a :href="event.webSiteUrl" class="hover:underline">{{
-            event.webSiteUrl
-          }}</a>
+          <a
+            :href="event.webSiteUrl"
+            class="hover:underline inline-block truncate w-full"
+            >{{ event.webSiteUrl }}</a
+          >
         </p>
       </div>
     </div>

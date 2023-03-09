@@ -43,6 +43,7 @@ const useCreateEvent = (callback: Function) => {
         validators.requiredForDate(t('pages.events.edit.event_name.title')),
         validators.maxTextLength(t('pages.events.edit.event_name.title'), 25),
       ]),
+      place: validators.maxTextLength(t('pages.events.edit.place.title'), 50),
       webSiteUrl: validators.isUrl(t('pages.events.edit.web_site_url.title')),
       endDate: validators.requiredForDate(t('pages.events.edit.date.end_date')),
       startDate: multipleValidators([
