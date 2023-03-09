@@ -5,7 +5,10 @@ import {
   Firestore,
   query,
   DocumentData,
-  serverTimestamp,
+  deleteField,
+  doc,
+  updateDoc,
+  deleteDoc,
 } from 'firebase/firestore'
 import { Event } from '~/entities/Event'
 
@@ -42,12 +45,29 @@ const getEvents = async () => {
   }
 }
 
-const { data: events, loading } = await useFetch(getEvents)
+const {
+  data: events,
+  loading,
+  reload: reloadEvents,
+} = await useFetch(getEvents)
+
+const onClickDelete = async (eventId: string) => {
+  const user = fGetUser()
+  if (!user) return
+  await deleteDoc(doc(db.value, 'events', user.uid, 'events', eventId))
+  reloadEvents()
+}
 </script>
 
 <template>
-  <div v-if="loading">loading...</div>
-  <div v-else class="space-y-2 space-x-2 flex flex-wrap">
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+  <div v-if="events" class="space-y-2 space-x-2 flex flex-wrap flex-col">
+    <SideDelete
+      v-for="event in events"
+      size="8"
+      :key="event.id"
+      @on-click-delete="onClickDelete(event.id)"
+    >
+      <EventCard :event="event" />
+    </SideDelete>
   </div>
 </template>

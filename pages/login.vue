@@ -10,9 +10,9 @@ const { signIn } = useAuth()
 <template>
   <PageWrapper class="flex-1 flex">
     <PageBody class="flex-1 flex">
-      <div>
+      <div class="justify-center">
         <ClientOnly>
-          <div>団体関係者ログイン</div>
+          <h1 class="text-xl font-bold">団体関係者ログイン</h1>
           <div>
             <p>
               団体関係者はログインすると、イベントの作成ができるようになります！

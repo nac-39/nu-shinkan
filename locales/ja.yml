@@ -4,6 +4,9 @@ components:
   theme_switcher:
     theme: テーマ
     change_theme: テーマを変更
+  event_card:
+    read_more: 詳細を表示
+    close: 閉じる
 pages:
   '404':
     title: ページが見つかりません

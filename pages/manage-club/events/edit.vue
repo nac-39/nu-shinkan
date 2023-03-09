@@ -7,7 +7,7 @@ definePageMeta({
 </script>
 
 <template>
-  <PageWrapper class="flex-1 flex px-12">
+  <PageWrapper class="flex-1 flex md:px-12 px-4">
     <PageBody class="space-y-4">
       <PageManageClubEventsEdit />
     </PageBody>

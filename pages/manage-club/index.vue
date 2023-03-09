@@ -6,9 +6,13 @@ definePageMeta({
 </script>
 
 <template>
-  <PageWrapper class="flex-1 flex">
-    <PageBody class="flex-1 flex">
-      <div>団体関係者用ページ</div>
+  <PageWrapper class="flex-1 flex md:px-12 px-4">
+    <PageBody class="pt-4 space-y-4">
+      <Button :to="'/manage-club/events/edit'">イベント登録ページ</Button>
+      <div>
+        <div class="text-lg font-bold py-2">登録済みイベント</div>
+        <PageManageClubList />
+      </div>
     </PageBody>
   </PageWrapper>
 </template>

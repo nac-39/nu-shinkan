@@ -8,9 +8,18 @@ export const useFetch = async (callback: () => Promise<any>) => {
   })
   loading.value = false
 
+  const reload = async () => {
+    loading.value = true
+    data.value = await callback().catch((result) => {
+      error.value = result
+    })
+    loading.value = false
+  }
+
   return {
     data,
     loading,
+    reload,
     error,
   }
 }
