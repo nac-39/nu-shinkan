@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     'IconMaterialSymbols:contentCopyOutline': typeof import('~icons/material-symbols/content-copy-outline')['default']
     'IconMaterialSymbols:delete': typeof import('~icons/material-symbols/delete')['default']
     'IconMaterialSymbols:locationOnOutline': typeof import('~icons/material-symbols/location-on-outline')['default']
+    'IconMaterialSymbols:playArrowRounded': typeof import('~icons/material-symbols/play-arrow-rounded')['default']
     'IconMdi:checkCircle': typeof import('~icons/mdi/check-circle')['default']
     'IconPh:linkSimpleLight': typeof import('~icons/ph/link-simple-light')['default']
     'IconUil:angleDown': typeof import('~icons/uil/angle-down')['default']

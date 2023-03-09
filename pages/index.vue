@@ -1,6 +1,19 @@
 <template>
   <PageWrapper class="flex-1 flex">
-    <PageBody class="flex-1 flex">
+    <PageBody>
+      <PageSection>
+        <RouterLink
+          to="/events"
+          class="md:px-20 px-4 bg-primary-300 dark:bg-primary-900 flex justify-center w-full py-4"
+        >
+          <div class="flex items-center">
+            <span class="text-2xl font-bold">
+              イベント一覧ページはこちら！
+            </span>
+            <IconMaterialSymbols:play-arrow-rounded class="w-8 h-8" />
+          </div>
+        </RouterLink>
+      </PageSection>
       <PageSection class="flex flex-wrap justify-center">
         <ClientOnly>
           <Card

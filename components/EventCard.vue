@@ -7,7 +7,6 @@ import type { Event } from '~/entities/Event'
 const { t } = useLang()
 const props = defineProps<{ event: Event }>()
 const dateText = computed(() => {
-  if (props.event.isAllDay) return '終日（もしくは未定）'
   if (!props.event.startDate || !props.event.endDate) return ''
   if (isSameDay(props.event.startDate, props.event.endDate)) {
     return (

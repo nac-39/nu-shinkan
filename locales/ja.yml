@@ -30,7 +30,6 @@ pages:
         title: 日付
         start_date: 開始日時
         end_date: 終了日時
-        all_day_or_undefined: 終日（もしくは未定）
       place:
         title: 場所
         placeholder: 場所を入力

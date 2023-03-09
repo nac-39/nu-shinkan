@@ -5,10 +5,7 @@ import {
   Firestore,
   query,
   DocumentData,
-  deleteField,
-  doc,
-  updateDoc,
-  deleteDoc,
+  orderBy,
 } from 'firebase/firestore'
 import { Event } from '~/entities/Event'
 
@@ -28,12 +25,29 @@ const convertEvent = (id: string, result: DocumentData): Event => {
   }
 }
 
-const getEvents = async () => {
+const getUsers = async () => {
   try {
-    const user = fGetUser()
-    if (!user) return
+    const userIds: string[] = []
+    const q = query(collection(db.value, 'events'))
+    const res = await getDocs(q)
+    res.forEach((result) => {
+      console.log(result.ref.path)
+      userIds.push(result.id)
+    })
+    console.log(userIds)
+    return userIds
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+const getEvents = async (id: string) => {
+  try {
     const events: Event[] = []
-    const q = query(collection(db.value, 'events', user.uid, 'events'))
+    const q = query(
+      collection(db.value, 'events', id, 'events'),
+      orderBy('startDate')
+    )
     const res = await getDocs(q)
     res.forEach((result) => {
       events.push(convertEvent(result.id, result.data()))
@@ -44,25 +58,16 @@ const getEvents = async () => {
   }
 }
 
-const { data: events, reload: reloadEvents } = await useFetch(getEvents)
-
-const onClickDelete = async (eventId: string) => {
-  const user = fGetUser()
-  if (!user) return
-  await deleteDoc(doc(db.value, 'events', user.uid, 'events', eventId))
-  reloadEvents()
-}
+const { data: events } = await useFetch(async () => {
+  const userIds = await getUsers()
+  if (!userIds) return
+  const r = await Promise.all(userIds.map(async (id) => await getEvents(id)))
+  return r.flat()
+})
 </script>
 
 <template>
   <div v-if="events" class="space-y-2 space-x-2 flex flex-wrap flex-col">
-    <SideDelete
-      v-for="event in events"
-      :key="event.id"
-      size="8"
-      @on-click-delete="onClickDelete(event.id)"
-    >
-      <EventCard :event="event" />
-    </SideDelete>
+    <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>

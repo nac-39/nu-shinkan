@@ -14,7 +14,6 @@ const inputValues = reactive<EventCreate>({
   name: '',
   clubName: '',
   clubImagePath: '',
-  isAllDay: false,
   startDate: new Date(),
   endDate: new Date(),
   place: '',
@@ -34,16 +33,11 @@ const onSubmit = async () => {
   if (!user) return
   inputValues.clubName = user.displayName
   inputValues.clubImagePath = user.photoURL
-  if (inputValues.isAllDay) {
-    inputValues.startDate = null
-    inputValues.endDate = null
-  }
   errorMsg.value = useValidate(inputValues, {
     name: validators.requiredForText(t('pages.events.edit.event_name.title')),
     webSiteUrl: validators.isUrl('関連URL'),
     startDate: (startDate) => {
-      if ((!startDate || !inputValues.endDate) && inputValues.isAllDay)
-        return true
+      if (!startDate || !inputValues.endDate) return true
       if (!(startDate instanceof Date))
         return t('pages.events.edit.errors.input_start_day')
       if (!(inputValues.endDate instanceof Date))
@@ -78,12 +72,7 @@ const onSubmit = async () => {
     <div class="font-bold text-lg">
       {{ t('pages.events.edit.date.title') }}
     </div>
-    <FormCheckBox
-      v-model:isChecked="inputValues.isAllDay"
-      :label="t('pages.events.edit.date.all_day_or_undefined')"
-    >
-    </FormCheckBox>
-    <div v-show="!inputValues.isAllDay" class="flex space-x-2">
+    <div class="flex space-x-2">
       <div>
         <p>{{ t('pages.events.edit.date.start_date') }}</p>
         <VueDatePicker

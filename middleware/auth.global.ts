@@ -1,4 +1,4 @@
-const noAuthRoutes = ['/', '/login', 'about']
+const noAuthRoutes = ['/', '/login', '/about', '/events']
 export default defineNuxtRouteMiddleware(async (to, from) => {
   // client only
   if (!process.server) {
