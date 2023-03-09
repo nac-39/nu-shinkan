@@ -41,9 +41,12 @@ pages:
         description: 申し込みフォームのURL、詳細が見れるウェブサイトなどのリンク
         placeholder: 関連URLを入力
       errors:
-        start_date_must_be_before_end_date: 開始日が終了日より後になっています。
+        start_date_must_be_before_end_date: 終了日を開始日より後にしてください。
         input_start_day: 開始日時を入力してください。
         input_end_day: 終了日時を入力してください。
+validator:
+  is_required: は必須項目です
+  is_required_url_form: はURLの形式で入力してくださ合い
 banners:
   welcome: こんにちは、%{app_name} へようこそ!
 others:

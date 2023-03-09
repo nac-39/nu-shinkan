@@ -23,3 +23,19 @@ export const useFetch = async (callback: () => Promise<any>) => {
     error,
   }
 }
+
+// 任意のタイミングで非同期関数を走らせられる関数
+export const useFetchCallBack = (callback: () => Promise<any>) => {
+  const data = ref<any>()
+  const loading = ref(false)
+  const execute = async () => {
+    loading.value = true
+    data.value = await callback()
+    loading.value = false
+  }
+  return {
+    data,
+    loading,
+    execute,
+  }
+}

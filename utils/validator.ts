@@ -22,11 +22,11 @@ export const useValidate = (target: Target, validators: Validators) => {
 export const validators: Record<string, Function> = {
   requiredForText: (fieldName: string) => {
     return (value: string) => {
-      if (value.trim().length) return true
+      if (value.trim().length > 0) return true
       return fieldName + 'は必須項目です。'
     }
   },
-  requredForDate: (fieldName: string) => {
+  requiredForDate: (fieldName: string) => {
     return (value: Date) => {
       if (value) return true
       return fieldName + 'は必須項目です。'
@@ -46,8 +46,33 @@ export const validators: Record<string, Function> = {
         : fieldName + 'はURLの形式で入力してください。'
     }
   },
+  maxTextLength: (fieldName: string, max: number) => {
+    return (value: string) => {
+      if (value.length <= max) return true
+      return (
+        fieldName +
+        `は${max}文字以内で入力してください。(${
+          value.length - max
+        }文字オーバーしています。)`
+      )
+    }
+  },
+}
+
+export const multipleValidators = (
+  validators: Array<(arg: any) => string | true>
+) => {
+  return (value: any) => {
+    const errorMsg = []
+    for (const validator of validators) {
+      if (validator(value) !== true) {
+        errorMsg.push(validator(value))
+      }
+    }
+    return errorMsg.length ? errorMsg.join('\n') : true
+  }
 }
 
 export const regexes: Record<string, RegExp> = {
-  url: /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/,
+  url: /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~#?&/=]*)$/,
 }

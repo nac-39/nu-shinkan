@@ -5,9 +5,8 @@ import {
   Firestore,
   query,
   DocumentData,
-  deleteField,
   doc,
-  updateDoc,
+  orderBy,
   deleteDoc,
 } from 'firebase/firestore'
 import { Event } from '~/entities/Event'
@@ -33,7 +32,10 @@ const getEvents = async () => {
     const user = fGetUser()
     if (!user) return
     const events: Event[] = []
-    const q = query(collection(db.value, 'events', user.uid, 'events'))
+    const q = query(
+      collection(db.value, 'events', user.uid, 'events'),
+      orderBy('startDate')
+    )
     const res = await getDocs(q)
     res.forEach((result) => {
       events.push(convertEvent(result.id, result.data()))

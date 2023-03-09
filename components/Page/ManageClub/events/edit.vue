@@ -8,49 +8,101 @@ import { ITheme } from '~/utils/theme'
 const { t } = useLang()
 const theme = useState<ITheme>('theme.current')
 const router = useRouter()
-const errorMsg = ref('')
 
-const inputValues = reactive<EventCreate>({
-  name: '',
-  clubName: '',
-  clubImagePath: '',
-  startDate: new Date(),
-  endDate: new Date(),
-  place: '',
-  description: '',
-  webSiteUrl: '',
-})
+const useCreateEvent = (callback: Function) => {
+  const inputValues = reactive<EventCreate>({
+    name: '',
+    clubName: '',
+    clubImagePath: '',
+    startDate: new Date(),
+    endDate: new Date(),
+    place: '',
+    description: '',
+    webSiteUrl: '',
+  })
+  const errorMsg = ref('')
 
-const db = useState<Firestore>('firebase.db')
-const createEvent = async (event: EventCreate, clubId: string) => {
-  const docRef = collection(db.value, 'events', clubId, 'events')
-  await addDoc(docRef, event)
+  const db = useState<Firestore>('firebase.db')
+  const createEvent = async (event: EventCreate, clubId: string) => {
+    const docRef = collection(db.value, 'events', clubId, 'events')
+    await addDoc(docRef, event)
+  }
+
+  const validate = () => {
+    errorMsg.value = ''
+    const user = fGetUser()
+    if (!user) {
+      errorMsg.value =
+        'Firebase Error: 入力内容をコピーしてリロードしてください'
+      return
+    }
+    inputValues.clubName = user.displayName
+    inputValues.clubImagePath = user.photoURL
+    errorMsg.value = useValidate(inputValues, {
+      name: multipleValidators([
+        validators.requiredForDate(t('pages.events.edit.event_name.title')),
+        validators.maxTextLength(t('pages.events.edit.event_name.title'), 25),
+      ]),
+      webSiteUrl: validators.isUrl(t('pages.events.edit.web_site_url.title')),
+      endDate: validators.requiredForDate(t('pages.events.edit.date.end_date')),
+      startDate: multipleValidators([
+        validators.requiredForDate(t('pages.events.edit.date.start_date')),
+        (startDate: Date) => {
+          if (!(startDate instanceof Date)) return
+          if (!(inputValues.endDate instanceof Date)) return
+          return isAfter(inputValues.endDate, startDate)
+            ? true
+            : t('pages.events.edit.errors.start_date_must_be_before_end_date')
+        },
+      ]),
+    })
+  }
+
+  const { loading: submitLoading, execute } = useFetchCallBack(async () => {
+    const user = fGetUser()
+    if (!user) {
+      errorMsg.value =
+        'Firebase Error: 入力内容をコピーしてリロードしてください'
+      return
+    }
+    await createEvent(inputValues, user.uid)
+  })
+
+  const { loading: callbackLoading, execute: callBackExecute } =
+    useFetchCallBack(async () => {
+      await callback()
+    })
+  const done = ref(false)
+
+  const loading = computed(
+    () => submitLoading.value || callbackLoading.value || done.value
+  )
+
+  const onSubmit = async () => {
+    if (loading.value) return
+    validate()
+    if (errorMsg.value) return
+    await execute()
+    await callBackExecute()
+    done.value = true
+  }
+
+  return {
+    inputValues,
+    loading,
+    onSubmit,
+    errorMsg,
+  } as const
 }
 
-const onSubmit = async () => {
-  errorMsg.value = ''
-  const user = fGetUser()
-  if (!user) return
-  inputValues.clubName = user.displayName
-  inputValues.clubImagePath = user.photoURL
-  errorMsg.value = useValidate(inputValues, {
-    name: validators.requiredForText(t('pages.events.edit.event_name.title')),
-    webSiteUrl: validators.isUrl('関連URL'),
-    startDate: (startDate) => {
-      if (!startDate || !inputValues.endDate) return true
-      if (!(startDate instanceof Date))
-        return t('pages.events.edit.errors.input_start_day')
-      if (!(inputValues.endDate instanceof Date))
-        return t('pages.events.edit.errors.input_end_day')
-      return isAfter(inputValues.endDate, startDate)
-        ? true
-        : t('pages.events.edit.errors.start_date_must_be_before_end_date')
-    },
-  })
-  if (errorMsg.value) return
+const { inputValues, onSubmit, errorMsg, loading } = useCreateEvent(
+  async () => {
+    await router.push('/manage-club')
+  }
+)
 
-  await createEvent(inputValues, user.uid)
-  router.push('/manage-club')
+const onClickSubmit = async () => {
+  await onSubmit()
 }
 </script>
 
@@ -64,7 +116,7 @@ const onSubmit = async () => {
       {{ t('pages.events.edit.event_name.title') }}
     </div>
     <FormTextInput
-      v-model="inputValues.name"
+      v-model.trim="inputValues.name"
       :placeholder="t('pages.events.edit.event_name.placeholder')"
     />
   </div>
@@ -117,5 +169,5 @@ const onSubmit = async () => {
     />
   </div>
   <ErrorMessage :error-message="errorMsg" />
-  <Button @click="onSubmit">保存する</Button>
+  <Button :loading="loading" @click="onClickSubmit">保存する</Button>
 </template>
