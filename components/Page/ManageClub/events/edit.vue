@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import VueDatePicker from '@vuepic/vue-datepicker'
-import { collection, addDoc, Firestore } from 'firebase/firestore'
+import {
+  collection,
+  addDoc,
+  setDoc,
+  doc,
+  getFirestore,
+} from 'firebase/firestore'
 import { isAfter } from 'date-fns'
 import { EventCreate } from '~/entities/Event'
 import { ITheme } from '~/utils/theme'
@@ -22,9 +28,11 @@ const useCreateEvent = (callback: Function) => {
   })
   const errorMsg = ref('')
 
-  const db = useState<Firestore>('firebase.db')
-  const createEvent = async (event: EventCreate, clubId: string) => {
-    const docRef = collection(db.value, 'events', clubId, 'events')
+  const createEvent = async (event: EventCreate, clubScreenName: string) => {
+    const db = getFirestore()
+    const eventDocRef = doc(db, 'events', clubScreenName)
+    await setDoc(eventDocRef, {}, { merge: true })
+    const docRef = collection(db, 'events', clubScreenName, 'events')
     await addDoc(docRef, event)
   }
 
