@@ -4,7 +4,6 @@ import json
 import requests
 import dotenv
 from pprint import pprint
-from concurrent.futures import ThreadPoolExecutor
 
 
 dotenv.load_dotenv()
@@ -89,6 +88,18 @@ def save_images(user_json):
             print(user)
 
 
+def get_formatted_club_users():
+    users = get_club_users(token)
+    user_json = []
+    for user in users:
+        try:
+            user_json.append(format_user(user))
+        except Exception as e:
+            pprint(user)
+            pprint(e)
+    return convert_camel(user_json)
+
+
 if __name__ == '__main__':
     users = get_club_users(token)
     user_json = []
@@ -100,5 +111,3 @@ if __name__ == '__main__':
             pprint(e)
     save_json(convert_camel(user_json))
     pprint(f"saved users: {len(user_json)}")
-    with ThreadPoolExecutor() as executor:
-        feature = executor.submit(save_images, user_json)
