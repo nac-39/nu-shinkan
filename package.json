@@ -70,6 +70,7 @@
     ]
   },
   "dependencies": {
-    "@vuepic/vue-datepicker": "^4.2.0"
+    "@vuepic/vue-datepicker": "^4.2.0",
+    "firebase-tools": "^11.24.1"
   }
 }
