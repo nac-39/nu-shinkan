@@ -5,8 +5,11 @@ definePageMeta({
   layout: 'page',
 })
 // client only
+const errorMsg = ref('')
 if (!process.server) {
-  const result = await getRedirectResult(getAuth())
+  const result = await getRedirectResult(getAuth()).catch((error) => {
+    errorMsg.value = error.message
+  })
   if (result) {
     // 認証後
     const router = useRouter()
@@ -31,6 +34,9 @@ const { signIn } = useAuth()
               </p>
               <p>
                 トップページに表示されていないTwitterアカウントではログインが成功しません。
+              </p>
+              <p v-if="errorMsg">
+                {{ errorMsg }}
               </p>
             </div>
             <Button class="mt-8 bg-primary dark:bg-primary-800" @click="signIn"
