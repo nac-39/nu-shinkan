@@ -1,9 +1,20 @@
 <script setup lang="ts">
+import { getAuth, getRedirectResult } from 'firebase/auth'
 // meta
 definePageMeta({
   layout: 'page',
 })
-
+// client only
+if (!process.server) {
+  const result = await getRedirectResult(getAuth())
+  if (result) {
+    // 認証後
+    const router = useRouter()
+    const route = useRoute()
+    const redirectUri = route.query.redirect_uri as string | undefined
+    router.push(redirectUri || '/')
+  }
+}
 const { signIn } = useAuth()
 </script>
 
@@ -17,6 +28,9 @@ const { signIn } = useAuth()
             <div class="mt-8">
               <p>
                 団体関係者はログインすると、イベントの作成ができるようになります！
+              </p>
+              <p>
+                トップページに表示されていないTwitterアカウントではログインが成功しません。
               </p>
             </div>
             <Button class="mt-8 bg-primary dark:bg-primary-800" @click="signIn"
