@@ -95,6 +95,11 @@ exports.beforeCreate = functions.auth
         'permission-denied',
         'Permission denied. You are not registered to twitter list, or list is not reloaded.'
       )
+    } else if (!data.data()?.isVerified) {
+      throw new functions.auth.HttpsError(
+        'permission-denied',
+        'Permission denied. You are not registered to twitter list, or list is not reloaded.'
+      )
     }
   })
 
@@ -107,7 +112,8 @@ exports.linePostBack = functions.https.onRequest(async (request, response) => {
           Authorization: `Bearer ${twitterToken}`,
         },
       })
-      .catch(() => {
+      .catch((err) => {
+        console.warn(err)
         throw new functions.https.HttpsError(
           'internal',
           'Failed to get Twitter profile.'
@@ -133,7 +139,8 @@ exports.linePostBack = functions.https.onRequest(async (request, response) => {
         type: 'text',
         text: `${name}を新規ユーザー登録したよ！Twitterはこちら！\nhttps://twitter.com/${screenName}`,
       })
-      .catch(() => {
+      .catch((err) => {
+        console.warn(err)
         throw new functions.https.HttpsError(
           'internal',
           'Failed to push LINE notification to admin user.'
@@ -145,12 +152,14 @@ exports.linePostBack = functions.https.onRequest(async (request, response) => {
   const res: line.WebhookEvent = request.body.events[0]
 
   if (res.type !== 'postback') {
+    response.status(200).send()
     return
   }
   const screenName = res.postback.data
   const profile = await createUserProfile(screenName)
   const dataRef = admin.firestore().doc(`/club-users/${screenName}`)
-  await dataRef.set(profile).catch(() => {
+  await dataRef.set(profile).catch((err) => {
+    console.warn(err)
     throw new functions.https.HttpsError(
       'internal',
       'Failed to add user to firestore.'
