@@ -6,4 +6,5 @@ export type User = {
   profileImageUrlHttps?: string
   url?: string
   instaId?: string
+  isVerified: boolean
 }
