@@ -1,9 +1,9 @@
-const noAuthRoutes = ['/', '/login', '/about', '/events']
+const noAuthRoutes = ['/', '/login', '/about', '/events', '/redirect']
 export default defineNuxtRouteMiddleware(async (to, from) => {
   // client only
   if (!process.server) {
-    const { checkAuthState, token, afterSignIn } = useAuth()
-    await afterSignIn()
+    const { checkAuthState, token } = useAuth()
+    // await afterSignIn()
     await checkAuthState()
     // ログインしてない時
     if (!token.value) {

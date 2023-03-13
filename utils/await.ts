@@ -28,14 +28,16 @@ export const useFetch = async (callback: () => Promise<any>) => {
 export const useFetchCallBack = (callback: () => Promise<any>) => {
   const data = ref<any>()
   const loading = ref(false)
+  const error = ref('')
   const execute = async () => {
     loading.value = true
-    data.value = await callback()
+    data.value = await callback().catch((err) => (error.value = err))
     loading.value = false
   }
   return {
     data,
     loading,
+    error,
     execute,
   }
 }
