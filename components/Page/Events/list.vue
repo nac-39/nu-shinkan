@@ -31,10 +31,8 @@ const getUsers = async () => {
     const q = query(collection(db.value, 'events'))
     const res = await getDocs(q)
     res.forEach((result) => {
-      console.log(result.ref.path)
       userIds.push(result.id)
     })
-    console.log(userIds)
     return userIds
   } catch (e) {
     console.error(e)
