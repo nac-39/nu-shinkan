@@ -11,7 +11,7 @@ db = firestore.client()
 
 def create_user(user_id: str, user: dict):
     doc_ref = db.collection(u'club-users').document(user_id)
-    doc_ref.set(user)
+    doc_ref.set(user, merge=True)
 
 
 def get_user(user_id: str):
@@ -30,7 +30,7 @@ def get_users():
 
 if (__name__ == "__main__"):
     users = getUser.get_formatted_club_users()
-    for user, index in users:
+    for index, user in enumerate(users):
         try:
             create_user(user["screenName"], user)
             print(f"created user: {index}, {user['screenName']}")
