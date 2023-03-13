@@ -9,12 +9,13 @@ from pprint import pprint
 dotenv.load_dotenv()
 
 token = os.getenv('TWITTER_BEARER_TOKEN')
-list_id = os.getenv('LIST_ID')
+default_list_id = os.getenv('LIST_ID')
+new_list_id = os.getenv('LIST_ID_2')
 img_path = "../public/assets/users/images/"
 json_path = "../public/"
 
 
-def get_club_users(token, cursor="", users=[]):
+def get_club_users(token, cursor="", users=list(), list_id=default_list_id):
     cursor_str = f"&cursor={cursor}" if cursor else ""
     res = requests.get(f"https://api.twitter.com/1.1/lists/members.json?list_id={list_id}{cursor_str}&skip_status=true", headers={'authorization': f'Bearer {token}'}
                        )
@@ -23,7 +24,7 @@ def get_club_users(token, cursor="", users=[]):
     users += res["users"]
     if res["next_cursor_str"] != "0":
         time.sleep(0.1)
-        get_club_users(token, res["next_cursor_str"], users)
+        get_club_users(token, res["next_cursor_str"], users, list_id=list_id)
     return users
 
 
@@ -35,6 +36,7 @@ def format_user(user):
         "profile_image_url_https": user["profile_image_url_https"] if "profile_image_url_https" in user else None,
         "screen_name": user["screen_name"],
         "url": user["url"] if "url" in user else None,
+        "is_verified": False,
     }
 
 
@@ -101,13 +103,27 @@ def get_formatted_club_users():
 
 
 if __name__ == '__main__':
-    users = get_club_users(token)
-    user_json = []
-    for user in users:
-        try:
-            user_json.append(format_user(user))
-        except Exception as e:
-            pprint(user)
-            pprint(e)
-    save_json(convert_camel(user_json))
-    pprint(f"saved users: {len(user_json)}")
+    # users = get_club_users(token)
+    # user_json = []
+    # for user in users:
+    #     try:
+    #         user_json.append(format_user(user))
+    #     except Exception as e:
+    #         pprint(user)
+    #         pprint(e)
+    # save_json(convert_camel(user_json))
+    # pprint(f"saved users: {len(user_json)}")
+    user1 = []
+    user2 = []
+    old_users = get_club_users(
+        token=token, users=user1, list_id=default_list_id)
+    new_users = get_club_users(token=token, users=user2, list_id=new_list_id)
+    print(f'旧リストユーザー数: {len(old_users)}')
+    print(f'新リストユーザー数: {len(new_users)}')
+    set1 = set(map(lambda x: x["screen_name"], old_users))
+    set2 = set(map(lambda x: x["screen_name"], new_users))
+
+    print(f'新リストに移行できてない人:')
+    print(set1 - set2)
+    print('新リストにだけ入っている人: ')
+    print(set2-set1)
