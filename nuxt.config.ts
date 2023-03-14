@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 
   // build
   build: {
-    transpile: ['@headlessui/vue'],
+    transpile: ['@headlessui/vue', '@vuepic/vue-datepicker'],
   },
 
   // modules

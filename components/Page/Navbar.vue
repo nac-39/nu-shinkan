@@ -9,12 +9,30 @@ export interface IMenuItem {
 }
 
 const { t } = useLang()
+const { isLogined } = useAuth()
 const app = useAppConfig() as AppConfigInput
 const menus = computed((): IMenuItem[] => [
   {
     type: 'link',
+    text: t('pages.events.nav'),
+    route: { name: 'events' },
+  },
+  {
+    type: 'link',
     text: t('pages.about.nav'),
     route: { name: 'about' },
+  },
+  {
+    type: 'link',
+    text: t('pages.manage-club.nav'),
+    route: { name: 'manage-club' },
+  },
+  {
+    type: 'link',
+    text: isLogined.value
+      ? t('pages.login.nav.logout')
+      : t('pages.login.nav.login'),
+    route: isLogined.value ? { name: 'logout' } : { name: 'login' },
   },
 ])
 </script>

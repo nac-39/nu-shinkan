@@ -20,6 +20,10 @@ const props = defineProps({
     type: String,
     default: undefined,
   },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 // state:styles
@@ -56,6 +60,7 @@ const selectedSize = computed(() => sizes[props.size] || sizes.lg)
 
 // methods
 const onClick = (event: MouseEvent) => {
+  if (props.loading) return
   const router = useRouter()
   if (props.to) {
     router.push(props.to)
@@ -81,6 +86,7 @@ const onClick = (event: MouseEvent) => {
     :href="href"
     @click="onClick"
   >
-    <slot>{{ text }}</slot>
+    <slot v-if="!loading">{{ text }}</slot>
+    <IconLineMd:loading-loop v-if="loading" />
   </a>
 </template>
