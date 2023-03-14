@@ -1,5 +1,11 @@
 import { getAuth } from '@firebase/auth'
-import { getFirestore, getDocs, collection } from 'firebase/firestore'
+import {
+  getFirestore,
+  getDocs,
+  collection,
+  where,
+  query,
+} from 'firebase/firestore'
 import { User } from '~~/entities/User'
 export const fGetUser = () => {
   const auth = getAuth()
@@ -9,10 +15,8 @@ export const fGetUser = () => {
 
 export const fGetAllUsers = async () => {
   const db = getFirestore()
-  const usersDocRef = collection(db, 'club-users')
-  const docSnap = await getDocs(usersDocRef).catch((error) =>
-    console.error(error)
-  )
+  const q = query(collection(db, 'club-users'), where('name', '!=', null))
+  const docSnap = await getDocs(q).catch((error) => console.error(error))
   if (!docSnap) return
   if (!docSnap.empty) {
     return docSnap.docs.map((doc) => doc.data() as User)
