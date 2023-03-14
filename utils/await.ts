@@ -1,18 +1,26 @@
-export const useFetch = async (callback: () => Promise<any>) => {
-  const data = ref<any>()
+export const useFetch = async <T>(callback: () => Promise<T>) => {
+  const data = ref<T>()
   const loading = ref<boolean>(true)
   const error = ref<any>()
 
-  data.value = await callback().catch((result) => {
-    error.value = result
-  })
+  await callback()
+    .then((result) => {
+      data.value = result
+    })
+    .catch((result) => {
+      error.value = result
+    })
   loading.value = false
 
   const reload = async () => {
     loading.value = true
-    data.value = await callback().catch((result) => {
-      error.value = result
-    })
+    await callback()
+      .then((result) => {
+        data.value = result
+      })
+      .catch((result) => {
+        error.value = result
+      })
     loading.value = false
   }
 

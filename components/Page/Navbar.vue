@@ -14,6 +14,11 @@ const app = useAppConfig() as AppConfigInput
 const menus = computed((): IMenuItem[] => [
   {
     type: 'link',
+    text: t('pages.events.nav'),
+    route: { name: 'events' },
+  },
+  {
+    type: 'link',
     text: t('pages.about.nav'),
     route: { name: 'about' },
   },

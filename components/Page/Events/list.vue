@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { format } from 'date-fns/esm'
+import ja from 'date-fns/locale/ja'
 import {
   collection,
   getDocs,
@@ -59,18 +61,54 @@ const getEvents = async (id: string) => {
 const { data: events } = await useFetch(async () => {
   const userIds = await getUsers()
   if (!userIds) return
-  const r = await Promise.all(userIds.map(async (id) => await getEvents(id)))
-  return r.flat()
+  const r = await Promise.all(
+    userIds.map(async (id) => await getEvents(id)).filter(Boolean)
+  )
+  return r.flat().filter((v) => !!v) as Event[]
+})
+
+const eventComputed = computed(() => {
+  if (!events.value) return
+  const formated = events.value?.map((event) => {
+    return {
+      yearMonth: format(event.startDate, 'yyyy/MM'),
+      date: format(event.startDate, 'dd'),
+      day: format(event.startDate, 'eee', { locale: ja }),
+      event,
+    }
+  })
+  const res: Record<
+    string,
+    Array<{ yearMonth: string; date: string; day: string; event: Event }>
+  > = {}
+  formated?.forEach((event) => {
+    if (res[event.yearMonth]) {
+      res[event.yearMonth].push(event)
+    } else {
+      res[event.yearMonth] = [event]
+    }
+  })
+  console.log(res)
+  return res
+})
+const dateKeys = computed(() => {
+  const dates = events.value?.map((e) => format(e.startDate, 'yyyy/MM'))
+  return Array.from(new Set(dates))
 })
 </script>
 
 <template>
-  <div v-if="events" class="flex flex-wrap">
-    <EventCard
-      v-for="event in events"
-      :key="event.id"
-      :event="event"
-      class="m-1 h-min"
-    />
+  <div v-if="eventComputed">
+    <div v-for="yearMonth in dateKeys" :key="yearMonth">
+      <div class="text-xl font-bold mt-8">{{ yearMonth }}</div>
+      <div class="flex flex-wrap flex-1">
+        <EventCard
+          v-for="event in eventComputed[yearMonth]"
+          :key="event.event.id"
+          :event="event.event"
+          class="m-1 h-min"
+        />
+      </div>
+    </div>
   </div>
 </template>

@@ -21,6 +21,7 @@ pages:
   manage-club:
     nav: 団体関係者
   events:
+    nav: イベント
     edit:
       title: イベント登録
       event_name:
