@@ -138,7 +138,7 @@
     {
         "name": "混声合唱団名古屋大学コール・グランツェ新歓2023",
         "description": "名古屋大学最大規模の混声合唱団🌸 | 音楽監督:伊東恵司👓 | 𝑰𝒏𝒔𝒕𝒂📷 https://t.co/xr6IOcnsqY | 公式𝑻𝒘𝒊𝒕𝒕𝒆𝒓 @chorglanze | 公式ホームページ🔍 https://t.co/XIPFVRR1VQ",
-        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1466597235505131520/1671546760",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1466597235505131520/1677987726",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1619387747952885760/_M9A6Wz8_normal.jpg",
         "screenName": "glanze2023",
         "url": "https://t.co/lPpBXQK0aD"
@@ -176,6 +176,14 @@
         "url": "https://t.co/ynaZ44o2Vt"
     },
     {
+        "name": "LAP！【名大の学び合いサークル】",
+        "description": "\"学生同士の学び合い\"をテーマにしたサークルです。活動は週1回金曜の20時〜zoomにて(最大1時間半)   少しでも興味があるよという方、気軽にDMにてご連絡頂ければ嬉しいです☺️",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1339039661189042177/1609296792",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1344114205104828416/tMTJsxPP_normal.jpg",
+        "screenName": "lap_nagoya",
+        "url": "https://t.co/8Cz4DdGD14"
+    },
+    {
         "name": "名古屋大学読書サークル",
         "description": "毎月第1日曜日にオンライン読書会、毎週金曜日に対面読書会を開催中！大学を問わず、随時部員募集中です！ #読書サークル #春から名大 読書メーター（https://t.co/DTx1si9hL9） Instagram(https://t.co/6eFNA6ibDC)",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1246436986530852864/1586495799",
@@ -190,6 +198,14 @@
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1568756335722008577/O4MWL43f_normal.jpg",
         "screenName": "oden_circle",
         "url": "https://t.co/auh99TmCG8"
+    },
+    {
+        "name": "名古屋大学バレーボールサークル　牛王",
+        "description": "名古屋大学生を中心とした男女混合のバレーボールサークルです🏐 ネットの高さは230cmで、週に2,3回ほど、名大付近の体育館で活動しています！Instagram、公式LINE、質問箱は下のURLから🔗",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1244151433429057536/1586097591",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1246808646018674688/Nzf9zRNZ_normal.jpg",
+        "screenName": "gooh_volleyball",
+        "url": "https://t.co/n2sS3xtlzd"
     },
     {
         "name": "名古屋大学教育サークルすとーりーうぃず",
@@ -241,7 +257,7 @@
     },
     {
         "name": "名大アメフト部GRAMPUS 新歓2023🏈",
-        "description": "名大アメフト部GRAMPUSの新歓用アカウントです🏈 GRAMPUSの新歓は【名大最大】なんと、毎年1500人以上参加してます！これはなんと名大新入生の2人に1人！！新歓連絡を見逃すな！新歓イベントの参加連絡等はDMから受け付けています📩",
+        "description": "GRAMPUSの新歓は🌟名大最大🌟毎年1500人以上の新入生が参加してます！これはなんと名大新入生の2人に1人！！新歓情報を見逃すな！新歓イベントの参加連絡等はDMから受け付けています📩",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/974939444720451585/1676293505",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1625118817742618626/S4nrKrQ0_normal.jpg",
         "screenName": "nu_grashin2023",
@@ -288,12 +304,28 @@
         "url": null
     },
     {
+        "name": "名古屋大学奇術研究会",
+        "description": "マジックサークルです！ 略して名大奇術研です！ご質問などリプライ、DMお待ちしております♤ 一緒に手品を楽しもう！ 公式LINE https://t.co/yL0ZqkuNt4 “例会は毎週金曜日！”",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/820547048625737730/1550583983",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/839820919736418305/shFD8Ckx_normal.jpg",
+        "screenName": "nu_magicclub",
+        "url": "https://t.co/aD761Wl3U6"
+    },
+    {
         "name": "名大シャボン玉サークル・ゆどうふ",
         "description": "名古屋大学でふわっとシャボン玉を飛ばしてるサークルです。液の配合や道具から自分たちで作っています！興味のある方はDMでご連絡下さい😊 \n#春から名大\nhttps://t.co/Vd81rQEyw2",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/802883596734242817/1566060289",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1114888900143484928/LLcYvpQJ_normal.jpg",
         "screenName": "nu_syabondama",
         "url": "https://t.co/SImLMtA08J"
+    },
+    {
+        "name": "名古屋大学 化石・鉱物同好会",
+        "description": "名古屋大学の化石・鉱物を採集、調査する公認サークルです。活動は月1の採集と週1の例会。このサークルに興味があれば返信やDMでお気軽にご連絡下さい。学外の方も大歓迎です！#NUFM標本庫 #NUFM標本庫番外編",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/746685322054905857/1483200543",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/923112832639442945/EDmDkswa_normal.jpg",
+        "screenName": "nagoya_FM",
+        "url": null
     },
     {
         "name": "名古屋大学農業サークル F&M",
@@ -320,6 +352,22 @@
         "url": "https://t.co/SsHfR1FCF1"
     },
     {
+        "name": "名大医学部混声合唱団",
+        "description": "通称医混😎 水・木曜日17:00〜と土曜日14:00〜に鶴舞キャンパスにて楽しく活動しています😇🙌",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/707504266529755136/1457529099",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/839725033090007040/7sseXPL1_normal.jpg",
+        "screenName": "meidai_ikon",
+        "url": "https://t.co/MdFfSpa5ND"
+    },
+    {
+        "name": "名古屋大学ジャズ研究会",
+        "description": "名古屋大学公認サークル、名大ジャズ研(通称じゃ研)です！ 毎週水曜日セッションを行なっています。セッション情報その他ライブ告知や練習風景など様々な事をなどつぶやきます、よろしくお願いします！随時部員募集中です、連絡はDMまたはHPまで↓↓",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/3343655294/1481092809",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/856902714810261504/72KQBwDm_normal.jpg",
+        "screenName": "meidaijaken",
+        "url": "https://t.co/5j2iC42LeI"
+    },
+    {
         "name": "名大セクマイサークル『雨玉』",
         "description": "名古屋大学非公式セクマイサークル「雨上がりのしゃぼん玉」通称「雨玉」です！ 当事者・理解者が雑談を通じてゆるく繋がるサークルです。LGBTQ+ group 会により、学生のみ(所属は問わない)と誰でも可があります 質問・参加希望など、お気軽にご連絡ください→nagoya.u.lgbt@gmail.com",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/3307583016/1438866776",
@@ -344,12 +392,44 @@
         "url": "https://t.co/UhveqQRp9a"
     },
     {
+        "name": "名古屋大学茶道部(松尾流)",
+        "description": "名古屋大学茶道部のTwitterアカウントです。「松尾流」という名古屋の流派。●毎週火,木16:30～(長期休暇中10:00～) @学生会館 和室 ●質問箱 https://t.co/0MU0oj9iZR ●自由闊達に呟きます Ψ_(。-∀-)_■",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2835718254/1412259865",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/529277313376976900/nAohW20q_normal.png",
+        "screenName": "meidaisadobu",
+        "url": "https://t.co/MV4NnGnAED"
+    },
+    {
+        "name": "名古屋大学映画研究会",
+        "description": "名古屋大学映画研究会『くろねこ企画』の公式アカウントです。主にサークルでの活動状況をお伝えします。 学期間は 部会：月曜18:00～ 映画鑑賞会：金曜18:30～ で活動しております。 見学希望の方は御気軽にDMまでご連絡ください。他大も参加OKです！Mail:kuroneko.movie@gmail.com",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2554993741/1664189827",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/475665070890835969/Ty97LrIK_normal.png",
+        "screenName": "meidai_kuroneko",
+        "url": null
+    },
+    {
         "name": "名古屋大学チェスサークル",
         "description": "We are Nagoya University Chess Circle(NUCC). Current schedule:Every Mon, Thu. 18:30~ at 第1文化サークル棟2階1文-10 代表者: シュネー(@Kira_Freischutz)　夏季休業期間中はあまり活動できていない模様。",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2427039222/1400913622",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/452027173650452480/2_o4DpWE_normal.jpeg",
         "screenName": "NUChessCircle",
         "url": null
+    },
+    {
+        "name": "名古屋大学クイズ研究会",
+        "description": "名古屋大学クイズ研究会の公式アカウントです。会員随時募集中。見学、入会はTwitterのDMまたはeメールで承ります。他大学からの参加も歓迎します！詳しくは公式HPをご覧下さい。大会の出場条件や当サークルが関係するクイズ企画への協力などの目的で用意する場合を除き、外部の方にクイズを提供することはできかねます。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2421735054/1459482816",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/715748987215556609/l0Xe4rsU_normal.jpg",
+        "screenName": "NU_Quiz",
+        "url": "https://t.co/RAq31Eak91"
+    },
+    {
+        "name": "名古屋大学ESS(公式)",
+        "description": "質問等はDMへお気軽にお声掛け下さい！/ 2022年度は木曜日17:00から / #名古屋大学 #春から名大 #名大ESS #名大ESSうらばなし #ディベート",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/2334393600/1590313887",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1264494474467569671/UbhLX2eS_normal.jpg",
+        "screenName": "nu_ess",
+        "url": "https://t.co/iBUcYjzhJL"
     },
     {
         "name": "TRUST公式",
@@ -376,12 +456,28 @@
         "url": "https://t.co/uMrP0feGrG"
     },
     {
+        "name": "名古屋大学囲碁部",
+        "description": "学生会館二階にある部室で楽しく囲碁を打っています。毎週月,金曜に活動中~入部はいつでも大歓迎です！☆問い合わせはDMやLINEからお待ちしてます。ホームページも是非ご確認ください",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1735420813/1489479640",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/549482726567333890/qBXxfuWR_normal.jpeg",
+        "screenName": "meidai_igobu",
+        "url": "https://t.co/MqTIegid9M"
+    },
+    {
         "name": "名大軟式野球サークルえだまめ",
         "description": "名古屋大学主体の軟式野球サークル、えだまめです。野球歴は小、中学校までの人が多いです。野球経験者も初心者も他大学の方もマネージャーも大歓迎です！もちろん男性プレイヤーだけでなく女性プレイヤー、マネージャーも随時大歓迎です！\nインスタグラム始めました！フォローお願いします!主にインスタの方を更新してます。",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1159006723/1622205186",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1171386858879639553/05vgmhpk_normal.jpg",
         "screenName": "edamame26376",
         "url": "https://t.co/SqhqihXBh8"
+    },
+    {
+        "name": "名古屋大学AirCraft",
+        "description": "名古屋大学人力飛行機製作サークルAirCraft公式アカウントです。今日も元気に活動中。\n ✉️nu.aircraft(あっと)https://t.co/9LgU6WlJNg",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/616983336/1659468493",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1554123697031548933/JIEwPW83_normal.jpg",
+        "screenName": "nu_aircraft",
+        "url": "https://t.co/6qPqN7xIzx"
     },
     {
         "name": "名古屋大学　ねこサークル　なごねこ",
@@ -392,7 +488,15 @@
         "url": "https://t.co/cQd64rKuv7"
     },
     {
-        "name": "名古屋大学航空部@七大戦",
+        "name": "名古屋大学観世会",
+        "description": "名古屋大学観世会は学生で能・狂言を行っているサークルです。活動…水曜・土曜、北部生協横の学生会館2階の部室にて。新入生大大大募集中❗️兼部・他大生・留学生も歓迎です。 新入部員には部費半年無料&足袋一足プレゼントキャンペーン中。メール → meidai.kanzekai@gmail.com",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/555835592/1487837468",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/2142709041/PAP_0004_normal.JPG",
+        "screenName": "meidaikanzekai",
+        "url": null
+    },
+    {
+        "name": "名古屋大学航空部",
         "description": "名大航空部のアカウントです。大会や合宿の様子から、部員の隠れた秘密まで不定期につぶやきます。 2023新歓アカウント🌸→@nuac_2023",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/480121085/1666450375",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1796080567/discus_normal.jpg",
@@ -432,19 +536,27 @@
         "url": "https://t.co/aeBP3dWWuo"
     },
     {
-        "name": "フリーペーパー『粋』@1/9 新刊発行!!",
-        "description": "【2022.1.9 Vol.76 RELEASED!!】 \n名大・南山大の学生でフリーペーパーを制作している学生団体『粋』の公式アカウントです。\nLINE→ https://t.co/Z0bGefIY6N \nInstagram→https://t.co/4BDjPv7BTL",
-        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/117431357/1673328798",
-        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/739467081788227584/V3_WDxfV_normal.jpg",
-        "screenName": "ikikikiki",
-        "url": "https://t.co/Mix62LAp8w"
-    },
-    {
         "name": "名古屋大学 FormulaTeamFEM",
         "description": "Nagoya University Formula Student Team🇯🇵\nWorld Ranking 2nd🥈 | 1x Japanese'🏆| 4x EV'🏆\n\nTarget：【EV初⚡️】日本大会総合優勝🔥\nHP：https://t.co/Lurd1SlB4S\n\n#名古屋大学\n#春から名大\n＃学生フォーミュラ",
         "profileBannerUrl": "https://pbs.twimg.com/profile_banners/117035669/1571283079",
         "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1184673210953949185/Ee9kxArV_normal.jpg",
         "screenName": "FormulaTeamFEM",
         "url": "https://t.co/N2dgIkrH8m"
+    },
+    {
+        "name": "名古屋大学SF・ミステリ・幻想小説研究会",
+        "description": "名大の読書サークルである名古屋大学SF・ミステリ・幻想小説研究会のお知らせ・連絡用アカウントです。メンバー、OBをフォローしています。",
+        "profileBannerUrl": null,
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/295978742/nusfaicon_normal.JPG",
+        "screenName": "TaroSF",
+        "url": "https://t.co/oPQh98ow8a"
+    },
+    {
+        "name": "名古屋大学アマチュア無線研究会",
+        "description": "名古屋大学アマチュア無線研究会です。工学部・理学部・情報学部などの理系生のほか、文系生や他大学(名市、愛学、愛知淑徳など)の学生も在籍しています。アマチュア無線のサークルとして、コンテスト・ARDFなどに取り組んでいるほか、電子工作やゲーム制作なども行っています。見学・質問等はDMまたはLINE公式アカウントまで。",
+        "profileBannerUrl": "https://pbs.twimg.com/profile_banners/14541026/1564973901",
+        "profileImageUrlHttps": "https://pbs.twimg.com/profile_images/1198918542348828673/3dWiMakY_normal.jpg",
+        "screenName": "ja2yka",
+        "url": "https://t.co/eNnfZeyoBq"
     }
 ]
