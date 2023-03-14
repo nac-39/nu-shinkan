@@ -22,7 +22,7 @@ exports.beforeCreate = functions.auth
     if (!screenName) {
       throw new functions.auth.HttpsError(
         'permission-denied',
-        'Permission denied. Screenname is not provided'
+        'Permission denied. Screenname is not provided\nTwitterのスクリーンネームを取得できませんでした。'
       )
     }
     const dataRef = admin.firestore().doc(`/club-users/${screenName}`)
@@ -93,12 +93,12 @@ exports.beforeCreate = functions.auth
       await client.pushMessage('Ue4b17f9bbe0e93414eaed36e7c032572', message)
       throw new functions.auth.HttpsError(
         'permission-denied',
-        'Permission denied. You are not registered to twitter list, or list is not reloaded.'
+        'Permission denied. Send request to register you.\nログインする権限がありません。ユーザー登録のリクエストを送信しました。'
       )
     } else if (!data.data()?.isVerified) {
       throw new functions.auth.HttpsError(
         'permission-denied',
-        'Permission denied. You are not registered to twitter list, or list is not reloaded.'
+        'Permission denied. Please wait for acception of request.\nログインする権限がありません。リクエストの承認をお待ちください。'
       )
     }
   })
