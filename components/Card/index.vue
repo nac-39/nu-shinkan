@@ -21,8 +21,8 @@ const f = {
     <div>
       <img
         class="w-full rounded-t-md h-32"
-        :src="user.profileBannerUrl"
-        :alt="user.name"
+        :src="user.profileBannerUrl!"
+        :alt="user.name!"
       />
       <div class="m-2">
         <CardAvatar
@@ -32,7 +32,10 @@ const f = {
         />
         <div class="mt-4">
           <p class="text-xl font-bold">{{ user.name }}</p>
-          <p class="text-sm" v-html="f.autoLink(user.description)"></p>
+          <p
+            class="text-sm"
+            v-html="f.autoLink(user.description ? user.description : '')"
+          ></p>
         </div>
       </div>
     </div>

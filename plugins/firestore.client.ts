@@ -9,7 +9,6 @@ import { getFirestore } from 'firebase/firestore'
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
-  console.log(config.firebase)
   const firebaseConfig = {
     apiKey: config.firebase.apiKey,
     authDomain: config.firebase.authDomain,

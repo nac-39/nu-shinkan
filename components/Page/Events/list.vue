@@ -88,7 +88,6 @@ const eventComputed = computed(() => {
       res[event.yearMonth] = [event]
     }
   })
-  console.log(res)
   return res
 })
 const dateKeys = computed(() => {
