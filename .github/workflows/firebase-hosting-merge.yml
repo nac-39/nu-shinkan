@@ -16,6 +16,14 @@ jobs:
           node-version: "16"
           cache: npm
       - run: yarn install && yarn generate
+        env:
+          API_KEY: AIzaSyAoitYXZqjPCfYR727c5osOrxhBQ2CQlQI
+          AUTH_DOMAIN: nu-shinkan-92c7b.firebaseapp.com
+          PROJECT_ID: nu-shinkan-92c7b
+          STORAGE_BUCKET: nu-shinkan-92c7b.appspot.com
+          MESSAGING_SENDER_ID: 955850920562
+          APP_ID: 1:955850920562:web:f12fc6863f2279545028eb
+          MEASUREMENT_ID: G-W1171W9FFT
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
