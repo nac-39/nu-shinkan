@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "nu-shinkan-92c7b"
-  }
+    "default": "nu-shinkan-dev",
+    "staging": "nu-shinkan-dev",
+    "prod": "nu-shinkan-92c7b"
+  },
+  "targets": {},
+  "etags": {}
 }

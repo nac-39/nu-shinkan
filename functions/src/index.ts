@@ -2,6 +2,7 @@ import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
 import * as line from '@line/bot-sdk'
 import axios from 'axios'
+import type { User } from '../../entities/User'
 
 admin.initializeApp()
 interface Config {
@@ -19,11 +20,113 @@ exports.beforeCreate = functions.auth
   .user()
   .beforeCreate(async (user, context) => {
     const screenName = context.additionalUserInfo?.username
+
     if (!screenName) {
       throw new functions.auth.HttpsError(
         'permission-denied',
         'Permission denied. Screenname is not provided\nTwitterのスクリーンネームを取得できませんでした。'
       )
+    }
+    const client = new line.Client(config)
+    const existingUserMessage: line.FlexMessage = {
+      type: 'flex',
+      altText: 'DBに登録されているユーザーがログインしようとしているよ！',
+      contents: {
+        type: 'bubble',
+        body: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'text',
+              text: 'DBに登録されているユーザーがログインしようとしているよ！ï',
+              weight: 'bold',
+            },
+            {
+              type: 'text',
+              text: '登録していいかな？',
+              margin: 'lg',
+            },
+            {
+              type: 'text',
+              text: screenName,
+              margin: 'none',
+            },
+          ],
+        },
+        footer: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'button',
+              action: {
+                type: 'uri',
+                label: 'Twitterを見る',
+                uri: `http://twitter.com/${screenName}`,
+              },
+            },
+            {
+              type: 'button',
+              action: {
+                type: 'postback',
+                label: '許可する',
+                data: screenName,
+              },
+            },
+          ],
+        },
+      },
+    }
+    const newUserMessage: line.FlexMessage = {
+      type: 'flex',
+      altText: 'nu-shinkanに新しいユーザーが来たよ！',
+      contents: {
+        type: 'bubble',
+        body: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'text',
+              text: '新しいユーザーだよ！',
+              weight: 'bold',
+            },
+            {
+              type: 'text',
+              text: '登録していいかな？',
+              margin: 'lg',
+            },
+            {
+              type: 'text',
+              text: screenName,
+              margin: 'none',
+            },
+          ],
+        },
+        footer: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'button',
+              action: {
+                type: 'uri',
+                label: 'Twitterを見る',
+                uri: `http://twitter.com/${screenName}`,
+              },
+            },
+            {
+              type: 'button',
+              action: {
+                type: 'postback',
+                label: '許可する',
+                data: screenName,
+              },
+            },
+          ],
+        },
+      },
     }
     const dataRef = admin.firestore().doc(`/club-users/${screenName}`)
     const data = await dataRef.get()
@@ -36,66 +139,22 @@ exports.beforeCreate = functions.auth
         profileImageUrlHttps: null,
         url: null,
         instaId: null,
-        isVerified: false,
-      })
-      const client = new line.Client(config)
-      const message: line.FlexMessage = {
-        type: 'flex',
-        altText: 'nu-shinkanに新しいユーザーが来たよ！',
-        contents: {
-          type: 'bubble',
-          body: {
-            type: 'box',
-            layout: 'vertical',
-            contents: [
-              {
-                type: 'text',
-                text: '新しいユーザーだよ！',
-                weight: 'bold',
-              },
-              {
-                type: 'text',
-                text: '登録していいかな？',
-                margin: 'lg',
-              },
-              {
-                type: 'text',
-                text: screenName,
-                margin: 'none',
-              },
-            ],
-          },
-          footer: {
-            type: 'box',
-            layout: 'vertical',
-            contents: [
-              {
-                type: 'button',
-                action: {
-                  type: 'uri',
-                  label: 'Twitterを見る',
-                  uri: `http://twitter.com/${screenName}`,
-                },
-              },
-              {
-                type: 'button',
-                action: {
-                  type: 'postback',
-                  label: '許可する',
-                  data: screenName,
-                },
-              },
-            ],
-          },
-        },
-      }
+        isVerified: 'pending',
+      } as User)
 
-      await client.pushMessage('Ue4b17f9bbe0e93414eaed36e7c032572', message)
+      await client.pushMessage(
+        'Ue4b17f9bbe0e93414eaed36e7c032572',
+        newUserMessage
+      )
       throw new functions.auth.HttpsError(
         'permission-denied',
         'Permission denied. Send request to register you.\nログインする権限がありません。ユーザー登録のリクエストを送信しました。'
       )
     } else if (!data.data()?.isVerified) {
+      await client.pushMessage(
+        'Ue4b17f9bbe0e93414eaed36e7c032572',
+        existingUserMessage
+      )
       throw new functions.auth.HttpsError(
         'permission-denied',
         'Permission denied. Please wait for acception of request.\nログインする権限がありません。リクエストの承認をお待ちください。'
@@ -128,8 +187,8 @@ exports.linePostBack = functions.https.onRequest(async (request, response) => {
       profileImageUrlHttps: profile.profile_image_url_https,
       url: profile.url,
       instaId: '',
-      isVerified: true,
-    }
+      isVerified: 'ok',
+    } as User
   }
 
   const notifyVerified = async (name: string, screenName: string) => {
@@ -165,5 +224,5 @@ exports.linePostBack = functions.https.onRequest(async (request, response) => {
       'Failed to add user to firestore.'
     )
   })
-  await notifyVerified(profile.name, profile.screenName)
+  await notifyVerified(profile.name!, profile.screenName)
 })

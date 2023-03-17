@@ -3,7 +3,7 @@ nuxt.d.ts
 
 # private config
 .env
-
+.env.*
 # deps
 node_modules
 

@@ -21,7 +21,9 @@ if (!process.server) {
 const { signIn } = useAuth()
 
 const { error, execute: onClick } = useFetchCallBack(signIn)
-
+watch(error, () => {
+  console.log(error.value)
+})
 const errorComputed = computed(() => {
   return (errorMsg.value ? errorMsg.value + '\n' : '') + error.value
 })
