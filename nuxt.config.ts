@@ -53,6 +53,13 @@ export default defineNuxtConfig({
         ],
       }),
     ],
+    server: {
+      proxy: {
+        '/__/auth/**': {
+          target: `https://${process.env.PROJECT_ID}.firebaseapp.com`,
+        },
+      },
+    },
   },
 
   // app config
